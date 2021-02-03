@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+}
+
+.div1 {
+    margin: 100px auto;
+    width: 1280px;
+    height: 2730px;
+    background-color: #daddd6;
+}
+
+.div2 {
+    width: 1280px;
+    height: 60px;
+    background-color: #333333;
+}
+
+.div2 img {
+    float: left;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.div2 ul li {
+    float: right;
+    line-height: 60px;
+    margin-right: 25px;
+}
+
+.div2 ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #daddd6;
+}
+
+.div2 ul .li4 a {
+    color: #67666a;
+}
+
+.div3 {
+    float: left;
+    width: 860px;
+    height: 820px;
+    background-color: #fff;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.div3 h1,.div4 h1,.div5 h1,.div6 h1 {
+    margin-left: 20px;
+    margin-top: 35px;
+}
+
+.div3 h2,.div4 h2,.div6 h2 {
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.div3 h3,.div4 h3,.div6 h3{
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.div3 p,.div4 p {
+    font-size:20px;
+    margin-left: 20px;
+}
+.div3 .p1 ,.div4 .p1{
+    text-indent: 2em;
+}
+.div3 img,.div4 img {
+    margin-left: 20px;
+}
+.div3 .p22,.div4 .p22{
+    text-indent: 2em;
+}
+.div8 {
+    float: left;
+    width: 360px;
+    height: 550px;
+    margin-top: 25px;
+    background-color: #fff;
+}
+
+.div4 {
+    float: left;
+    width: 860px;
+    height: 710px;
+    background-color: #fff;
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+.div4 ul li {
+    list-style: none;
+    margin-left: 40px;
+    font-size:20px;
+}
+
+.div5 {
+    float: left;
+    width: 860px;
+    height: 450px;
+    background-color: #fff;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.div6 {
+    float: left;
+    width: 860px;
+    height: 480px;
+    background-color: #fff;
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.div7 {
+    float: left;
+    width: 1280px;
+    height: 60px;
+    background-color: #333333;
+}
+.div9{
+    height:40px;
+    color:#333333;
+    line-height: 40px;
+    font-size:17px;
+    font-weight: 700;
+    border-left: 3px solid #cdcdcd;
+    margin-left:15px;
+    text-indent: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.div10 {
+    margin-left: 30px;
+    margin-bottom:15px;
+}
+.div10 input {
+    margin-left: 15px;
+    width:130px;
+    height: 20px;
+    font-size:10px;
+    border:1px solid #daddd6
+}
+.div11,.div14{
+    margin-left:162px;
+    font-size:10px;
+    color:#daddd6;
+    margin-bottom:30px;
+}
+.div12{
+    margin-left: 60px;
+    margin-bottom:15px;
+}
+.div12 input,.div13 input{
+    margin-left: 15px;
+    width:130px;
+    height: 20px;
+    font-size:10px;
+    border:1px solid #daddd6
+}
+.div13{
+    margin-left: 11px;
+    margin-bottom: 11px;
+}
+.div15,.div16,.div17{
+    margin-left: 110px;
+    margin-bottom: 11px;
+}
+.div15  input,.div16 select,.div17 input,.div18 textarea{
+    margin-left: 12px;
+}
+.div16 select,.div17 input{
+    border: 2px solid #daddd6;
+    border-radius: 5px;
+}
+
+.div20 textarea{
+    float:left;
+    width:180px;
+    height: 100px;
+    font-weight: 700;
+    color:#333333;
+    margin-left: 20px;
+}
+.div19{
+   float:left;
+   margin-left: 77px;
+   height: 111px;
+}
+.div21{
+   float:left;
+   margin-top: 5px;
+   margin-left: 18px;
+   border:1px solid #3355d1;
+   width:320px;
+   height: 40px;
+   background-color:#3355d1;
+   border-radius: 10px;
+}
+.div21 a{
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color:#fff;
+    padding-left: 130px;
+}
+.box1{
+    float:left;
+    margin-left: 30px;
+    margin-top: 30px;
+    width:125px;
+    height: 125px;
+    background-color: #fff;
+    text-align:center;
+    padding-top:10px ;
+    font-size:10px;
+    border: 1px solid #daddd6;
+}
+.box1 img{
+float: left;
+margin-left:11px;
+margin-top:10px;
+width:100px;
+height: 85px;
+}
+.div6 ol li{
+    margin-left: 80px;
+    font-size:20px;
+}
+.div6 ol{
+    margin-bottom: 40px;
+}
+.table{
+    width:815px;
+    height: 150px;
+    margin-left: 23px;
+    border: 0px solid #daddd6;
+}
+.th1{
+    text-align: left;
+    color:#fff;
+}
+.tr1 {
+    background-color:#333333;
+}
+.tr4 {
+    background-color:#daddd6;
+}
+.div7 {
+    text-align: center;
+    line-height: 60px;
+    color:#fff;
+}

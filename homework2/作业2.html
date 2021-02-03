@@ -1,0 +1,478 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-03 17:03:30
+ * @LastEditTime: 2021-02-04 00:21:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \前端学习第六天-CSS第四天\作业2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #fff;
+        }
+
+        .div1 {
+            margin: 100px auto;
+            width: 1280px;
+            height: 2730px;
+            background-color: #daddd6;
+        }
+
+        .div2 {
+            width: 1280px;
+            height: 60px;
+            background-color: #333333;
+        }
+
+        .div2 img {
+            float: left;
+            height: 100%;
+            margin-left: 50px;
+        }
+
+        .div2 ul li {
+            float: right;
+            line-height: 60px;
+            margin-right: 25px;
+        }
+
+        .div2 ul li a {
+            text-decoration: none;
+            font-size: 15px;
+            color: #daddd6;
+        }
+
+        .div2 ul .li4 a {
+            color: #67666a;
+        }
+
+        .div3 {
+            float: left;
+            width: 860px;
+            height: 820px;
+            background-color: #fff;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .div3 h1,.div4 h1,.div5 h1,.div6 h1 {
+            margin-left: 20px;
+            margin-top: 35px;
+        }
+
+        .div3 h2,.div4 h2,.div6 h2 {
+            font-weight: 400;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .div3 h3,.div4 h3,.div6 h3{
+            font-weight: 400;
+            margin-left: 20px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+        .div3 p,.div4 p {
+            font-size:20px;
+            margin-left: 20px;
+        }
+        .div3 .p1 ,.div4 .p1{
+            text-indent: 2em;
+        }
+        .div3 img,.div4 img {
+            margin-left: 20px;
+        }
+        .div3 .p22,.div4 .p22{
+            text-indent: 2em;
+        }
+        .div8 {
+            float: left;
+            width: 360px;
+            height: 550px;
+            margin-top: 25px;
+            background-color: #fff;
+        }
+
+        .div4 {
+            float: left;
+            width: 860px;
+            height: 710px;
+            background-color: #fff;
+            margin-left: 20px;
+            margin-bottom: 25px;
+        }
+        .div4 ul li {
+            list-style: none;
+            margin-left: 40px;
+            font-size:20px;
+        }
+
+        .div5 {
+            float: left;
+            width: 860px;
+            height: 450px;
+            background-color: #fff;
+            margin-top: 25px;
+            margin-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .div6 {
+            float: left;
+            width: 860px;
+            height: 480px;
+            background-color: #fff;
+            margin-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .div7 {
+            float: left;
+            width: 1280px;
+            height: 60px;
+            background-color: #333333;
+        }
+        .div9{
+            height:40px;
+            color:#333333;
+            line-height: 40px;
+            font-size:17px;
+            font-weight: 700;
+            border-left: 3px solid #cdcdcd;
+            margin-left:15px;
+            text-indent: 15px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        .div10 {
+            margin-left: 30px;
+            margin-bottom:15px;
+        }
+        .div10 input {
+            margin-left: 15px;
+            width:130px;
+            height: 20px;
+            font-size:10px;
+            border:1px solid #daddd6
+        }
+        .div11,.div14{
+            margin-left:162px;
+            font-size:10px;
+            color:#daddd6;
+            margin-bottom:30px;
+        }
+        .div12{
+            margin-left: 60px;
+            margin-bottom:15px;
+        }
+        .div12 input,.div13 input{
+            margin-left: 15px;
+            width:130px;
+            height: 20px;
+            font-size:10px;
+            border:1px solid #daddd6
+        }
+        .div13{
+            margin-left: 11px;
+            margin-bottom: 11px;
+        }
+        .div15,.div16,.div17{
+            margin-left: 110px;
+            margin-bottom: 11px;
+        }
+        .div15  input,.div16 select,.div17 input,.div18 textarea{
+            margin-left: 12px;
+        }
+        .div16 select,.div17 input{
+            border: 2px solid #daddd6;
+            border-radius: 5px;
+        }
+        
+        .div20 textarea{
+            float:left;
+            width:180px;
+            height: 100px;
+            font-weight: 700;
+            color:#333333;
+            margin-left: 20px;
+        }
+        .div19{
+           float:left;
+           margin-left: 77px;
+           height: 111px;
+        }
+        .div21{
+           float:left;
+           margin-top: 5px;
+           margin-left: 18px;
+           border:1px solid #3355d1;
+           width:320px;
+           height: 40px;
+           background-color:#3355d1;
+           border-radius: 10px;
+        }
+        .div21 a{
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            color:#fff;
+            padding-left: 130px;
+        }
+        .box1{
+            float:left;
+            margin-left: 30px;
+            margin-top: 30px;
+            width:125px;
+            height: 125px;
+            background-color: #fff;
+            text-align:center;
+            padding-top:10px ;
+            font-size:10px;
+            border: 1px solid #daddd6;
+        }
+        .box1 img{
+        float: left;
+        margin-left:11px;
+        margin-top:10px;
+        width:100px;
+        height: 85px;
+        }
+        .div6 ol li{
+            margin-left: 80px;
+            font-size:20px;
+        }
+        .div6 ol{
+            margin-bottom: 40px;
+        }
+        .table{
+            width:815px;
+            height: 150px;
+            margin-left: 23px;
+            border: 0px solid #daddd6;
+        }
+        .th1{
+            text-align: left;
+            color:#fff;
+        }
+        .tr1 {
+            background-color:#333333;
+        }
+        .tr4 {
+            background-color:#daddd6;
+        }
+        .div7 {
+            text-align: center;
+            line-height: 60px;
+            color:#fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div class="div2">
+            <img src="images/image.png">
+            <ul>
+                <li class="li4"><a href="#">导航链接四</a></li>
+                <li><a href="#">导航链接三</a></li>
+                <li><a href="#">导航链接二</a></li>
+                <li><a href="#">导航链接一</a></li>
+            </ul>
+        </div>
+        <div class="div3">
+            <h1>文章一级标题</h1>
+            <h2>文章二级标题</h2>
+            <h3>文章作者 文章发表时间</h3>
+            <p class="p1">这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，换行了
+            </p>
+            <p class="p2">这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，换行了
+            </p>
+            <p class="p3">这是一个很长很长的段落，这是一个很长很长的段落，
+                <a href="http://ife.baidu.com">这里有一个链接连接到http://ife.baidu
+                 .com</a>
+                这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+            </p>
+            <img src="images/背景.png">
+            <p class="p2 p22">这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，换行了
+            </p>
+            <p class="p3">这是一个很长很长的段落，这是一个很长很长的段落，
+                <a href="http://ife.baidu.com">这里有一个链接连接到http://ife.baidu
+                 .com</a>
+                这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+            </p>
+        </div>
+        <div class="div8">
+            <div class="div9">
+                这里以后是一个侧栏，这是侧栏的标题
+            </div>
+            <div class="div10">
+                请输入邮箱地址
+                <input type="text" value="这是一个文本输入框">
+            </div>
+            <div class="div11">
+                邮箱地址请按要求格式输入
+            </div>
+            <div class="div12">
+                请输入密码
+                <input type="password" value=".........">
+            </div>
+            <div class="div13">
+                请再次请输入密码
+                <input type="password" value=".........">
+            </div>
+            <div class="div14">
+                密码请为6-16位英文数字
+            </div>
+            <div class="div15">
+                性别
+                <input type="radio" name="sex" id="nan" checked="checked" class="input1"> <label for="nan"> 男 </label>  
+                <input type="radio" name="sex" id="nv"> <label for="nv" class="input2"> 女</label> 
+            </div>
+            <div class="div16">
+                城市
+                <select>
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>重庆</option>
+                    <option>其他</option>
+                </select>
+            </div>
+            <div class="div17">
+                爱好
+                <input type="checkbox" name="love" > 运动 
+                <input type="checkbox" name="love" > 艺术
+                <input type="checkbox" name="love" > 科学
+            </div>
+            <div class="div18">
+                <div class="div19">个人描述</div>
+                <div class="div20"><textarea>这是一个多行输入框，输入您的个人描述</textarea>
+                </div>
+                <div class="div21">
+                    <a href="#">确认提交</a>
+                </div>
+            </div>
+        </div>
+        <div class="div4">
+            <h1>另一篇文章一级标题</h1>
+            <h2>文章二级标题</h2>
+            <h3>文章作者 文章发表时间</h3>
+            <p class="p1">这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，
+                这是一个很长很长的段落，换行了
+            </p>
+            <p class="p2">这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，换行了
+            </p>
+            <p class="p3">这是一个很长很长的段落，这是一个很长很长的段落，
+                <a href="http://ife.baidu.com">这里有一个链接连接到http://ife.baidu
+                 .com</a>
+                这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，
+                这是一个很长很长的段落，这是一个很长很长的段落，
+                这是一个很长很长的段落，
+                这是一个很长很长的段落，
+            </p>
+            <img src="images/背景.png">
+            <ul>
+                <li>项目列表一</li>
+                <li>项目列表二</li>
+                <li>项目列表三</li>
+            </ul>
+        </div>
+        <div class="div5">
+            <h1>图片</h1>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+            <div class="box1">
+                好看的图片
+                <img src="images/背景.png">
+            </div>
+        </div>
+        <div class="div6">
+            <h1>文章一级标题</h1>
+            <h2>文章二级标题</h2>
+            <h3>文章作者 文章发表时间</h3>
+            <Ol>
+                <li>排名1</li>
+                <li>排名2</li>
+                <li>排名3</li>
+            </Ol>
+            <table class="table" border="0">
+                <tr class="tr1"><th class="th1">表头</th>  <th class="th1">表头</th> <th class="th1"> 表头 </th></tr>
+                <tr><td>表内容单元格</td>  <td>表内容单元格</td> <td><a href="#">操作</a> </td></tr>
+                <tr><td>表内容单元格</td>  <td>表内容单元格</td> <td><a href="#">操作</a> </td></tr>
+                <tr><td>表内容单元格</td>  <td>表内容单元格</td> <td> <a href="#">操作</a> </td></tr>
+                <tr><td>表内容单元格</td>  <td>表内容单元格</td> <td> <a href="#">操作</a> </td></tr>
+                <tr class="tr4"><td>总计</td>  <td>1000</td> <td></td></tr>
+            </table>
+        </div>
+        <div class="div7">
+            版权所有@
+        </div>
+    </div>
+</body>
+
+</html>
