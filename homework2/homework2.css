@@ -150,7 +150,8 @@ body{
     width:130px;
     height: 20px;
     font-size:10px;
-    border:1px solid #daddd6
+    border:1px solid #daddd6;
+    outline: none;
 }
 .div11,.div14{
     margin-left:162px;
@@ -167,7 +168,8 @@ body{
     width:130px;
     height: 20px;
     font-size:10px;
-    border:1px solid #daddd6
+    border:1px solid #daddd6;
+    outline: none;
 }
 .div13{
     margin-left: 11px;
@@ -179,10 +181,13 @@ body{
 }
 .div15  input,.div16 select,.div17 input,.div18 textarea{
     margin-left: 12px;
+    outline: none;
+    resize: none;
 }
 .div16 select,.div17 input{
     border: 2px solid #daddd6;
     border-radius: 5px;
+    outline: none;
 }
 
 .div20 textarea{
@@ -192,6 +197,9 @@ body{
     font-weight: 700;
     color:#333333;
     margin-left: 20px;
+    resize: none;
+    outline: none;
+    
 }
 .div19{
    float:left;
