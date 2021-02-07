@@ -1,47 +1,50 @@
+ /* 清除内外边距 */
 * {
     margin: 0;
     padding: 0;
 }
+/* 网页总体背景为白色 */
 body{
-    background-color: #fff;
+    background-color: #daddd6;
 }
-
-.div1 {
+/* 最大的盒子 使其居中 并且给到背景色 */
+.bigbox {
     margin: 100px auto;
     width: 1280px;
     height: 2730px;
     background-color: #daddd6;
+    border: 2px solid #333333;
 }
-
-.div2 {
+/* header模块 最上面的部分  */
+.header {
     width: 1280px;
     height: 60px;
     background-color: #333333;
 }
-
-.div2 img {
+/* 在header模块中插入一张图片 */
+.header img {
     float: left;
     height: 100%;
     margin-left: 50px;
 }
 
-.div2 ul li {
+.header ul li {
     float: right;
     line-height: 60px;
     margin-right: 25px;
 }
 
-.div2 ul li a {
+.header ul li a {
     text-decoration: none;
     font-size: 15px;
     color: #daddd6;
 }
-
-.div2 ul .li4 a {
+/* 选取第四个li并且单独给出颜色 */
+.header ul .li4 a {
     color: #67666a;
 }
-
-.div3 {
+/* 第一篇文章的布局 */
+.firstessay {
     float: left;
     width: 860px;
     height: 820px;
@@ -51,46 +54,42 @@ body{
     margin-left: 20px;
     margin-right: 20px;
 }
-
-.div3 h1,.div4 h1,.div5 h1,.div6 h1 {
+/* 对所有段落的h1进行相同的布局 */
+.firstessay h1,.secondessay h1,.picturebox h1,.ending h1 {
     margin-left: 20px;
     margin-top: 35px;
 }
-
-.div3 h2,.div4 h2,.div6 h2 {
+/* 对所有段落的h2进行相同的布局 */
+.firstessay h2,.secondessay h2,.ending h2 {
     font-weight: 400;
     margin-left: 20px;
     margin-top: 20px;
 }
-
-.div3 h3,.div4 h3,.div6 h3{
+/* 对所有段落的h3进行相同的布局 */
+.firstessay h3,.secondessay h3,.ending h3{
     font-weight: 400;
     margin-left: 20px;
     margin-top: 15px;
     margin-bottom: 20px;
 }
-.div3 p,.div4 p {
+ /* 对所有段落的p进行相同的布局 */
+.firstessay p,.secondessay p {
     font-size:20px;
     margin-left: 20px;
 }
-.div3 .p1 ,.div4 .p1{
+ /* 对所有段落类名为p1的进行相同的布局 */
+.firstessay .p1 ,.secondessay .p1{
     text-indent: 2em;
 }
-.div3 img,.div4 img {
+.firstessay img,.secondessay img {
     margin-left: 20px;
 }
-.div3 .p22,.div4 .p22{
+/* 控制两篇文章的首行缩进 */
+.firstessay .indent,.secondessay .indent{
     text-indent: 2em;
 }
-.div8 {
-    float: left;
-    width: 360px;
-    height: 550px;
-    margin-top: 25px;
-    background-color: #fff;
-}
 
-.div4 {
+.secondessay {
     float: left;
     width: 860px;
     height: 710px;
@@ -98,13 +97,13 @@ body{
     margin-left: 20px;
     margin-bottom: 25px;
 }
-.div4 ul li {
+.secondessay ul li {
     list-style: none;
     margin-left: 40px;
     font-size:20px;
 }
-
-.div5 {
+/* 盒子段落中的布局 */
+.picturebox {
     float: left;
     width: 860px;
     height: 450px;
@@ -113,8 +112,8 @@ body{
     margin-left: 20px;
     margin-bottom: 25px;
 }
-
-.div6 {
+/* 文章作者发表时间的盒子布局 */
+.ending {
     float: left;
     width: 860px;
     height: 480px;
@@ -122,14 +121,23 @@ body{
     margin-left: 20px;
     margin-bottom: 25px;
 }
-
-.div7 {
+/* 最底部盒子布局 */
+.bottom {
     float: left;
     width: 1280px;
     height: 60px;
     background-color: #333333;
 }
-.div9{
+/* 右边的侧边栏 */
+.navitems {
+    float: left;
+    width: 360px;
+    height: 550px;
+    margin-top: 25px;
+    background-color: #fff;
+}
+/* 侧边栏的第一个小栏 */
+.columns{
     height:40px;
     color:#333333;
     line-height: 40px;
@@ -141,11 +149,11 @@ body{
     margin-bottom: 15px;
     margin-top: 15px;
 }
-.div10 {
+.email {
     margin-left: 30px;
     margin-bottom:15px;
 }
-.div10 input {
+.email input {
     margin-left: 15px;
     width:130px;
     height: 20px;
@@ -153,17 +161,17 @@ body{
     border:1px solid #daddd6;
     outline: none;
 }
-.div11,.div14{
+.emailtips,.passwordstips{
     margin-left:162px;
     font-size:10px;
     color:#daddd6;
     margin-bottom:30px;
 }
-.div12{
+.passwords{
     margin-left: 60px;
     margin-bottom:15px;
 }
-.div12 input,.div13 input{
+.passwords input,.ensurepasswords input{
     margin-left: 15px;
     width:130px;
     height: 20px;
@@ -171,26 +179,26 @@ body{
     border:1px solid #daddd6;
     outline: none;
 }
-.div13{
+.ensurepasswords{
     margin-left: 11px;
     margin-bottom: 11px;
 }
-.div15,.div16,.div17{
+.sex,.city,.hobby{
     margin-left: 110px;
     margin-bottom: 11px;
 }
-.div15  input,.div16 select,.div17 input,.div18 textarea{
+.sex input,.city select,.hobbyinput,.describe textarea{
     margin-left: 12px;
     outline: none;
     resize: none;
 }
-.div16 select,.div17 input{
+.city select,.hobby input{
     border: 2px solid #daddd6;
     border-radius: 5px;
     outline: none;
 }
 
-.div20 textarea{
+.textarea textarea{
     float:left;
     width:180px;
     height: 100px;
@@ -201,12 +209,12 @@ body{
     outline: none;
     
 }
-.div19{
+.introduce{
    float:left;
    margin-left: 77px;
    height: 111px;
 }
-.div21{
+.submit{
    float:left;
    margin-top: 5px;
    margin-left: 18px;
@@ -216,14 +224,15 @@ body{
    background-color:#3355d1;
    border-radius: 10px;
 }
-.div21 a{
+.submit a{
     text-align: center;
     line-height: 40px;
     text-decoration: none;
     color:#fff;
     padding-left: 130px;
 }
-.box1{
+/* 每个装图片的容器 */
+.holder{
     float:left;
     margin-left: 30px;
     margin-top: 30px;
@@ -235,18 +244,18 @@ body{
     font-size:10px;
     border: 1px solid #daddd6;
 }
-.box1 img{
+.holder img{
 float: left;
 margin-left:11px;
 margin-top:10px;
 width:100px;
 height: 85px;
 }
-.div6 ol li{
+.ending ol li{
     margin-left: 80px;
     font-size:20px;
 }
-.div6 ol{
+.ending ol{
     margin-bottom: 40px;
 }
 .table{
@@ -255,17 +264,17 @@ height: 85px;
     margin-left: 23px;
     border: 0px solid #daddd6;
 }
-.th1{
+tr th:nth-child(n){
     text-align: left;
     color:#fff;
 }
-.tr1 {
+tr:first-child {
     background-color:#333333;
 }
-.tr4 {
+tr:last-child{
     background-color:#daddd6;
 }
-.div7 {
+.bottom {
     text-align: center;
     line-height: 60px;
     color:#fff;

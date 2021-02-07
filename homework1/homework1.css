@@ -5,13 +5,13 @@
 body {
     background-color: #bbbbbb;
 }
-.div1 {
+.bigbox {
     margin: 100px auto;
     background-color: #fff;
     width:600px;
     height: 425px;
 }
-.div2,.div3{
+.passwordheader,.messageheader{
     float: left;
     margin-left: 23px;
     margin-top:50px;
@@ -21,19 +21,19 @@ body {
     color:#757575;
     font-size: 20px;
 }
-.div2 a,.div3 a {
+.passwordheader a,.messageheader a {
     color: #757575;
     text-decoration: none;
 }
-.div2 a:hover,.div3 a:hover {
+.passwordheader a:hover,.messageheader a:hover {
     color:#02a7de;
 }
-.div4,.div5{
+.emailinput,.passwordinput{
     float:left;
     margin-left: 23px;
     margin-bottom: 42px;
 }
-.div4 input,.div5 input {
+.emailinput input,.passwordinput input {
     width:517px;
     height: 51px;
     border:#dddddd 1px solid;
@@ -43,7 +43,7 @@ body {
     text-indent:12px;
     outline: none;
 }
-.div6 {
+.remembering {
     float:left;
     margin-left: 23px;
     width:100px;
@@ -52,38 +52,38 @@ body {
     color:#757575;
     line-height: 38px;
 }
-.div6 input {
+.remembering input {
     margin-right: 10px;
     margin-left: 0;
     width:18px;
     height: 18px;
     outline: none;
 }
-.div7 {
+.tips{
     float:left;
     height: 38px;
     font-size: 15px;
     line-height: 38px;
     color:#bbbbbb;
 }
-.div9{
+.searching{
     float:right;
     height: 38px;
     margin-right: 64px;
     line-height: 38px;
 }
-.div9 a,.div8 a{
+.searching a,.verify a{
     text-decoration: none;
     font-size:15px;
     color:#02a7de;
 }
-.div8{
+.verify{
     float:left;
     height: 38px;
     line-height: 38px;
     margin-left: 30px;;
 }
-.div10{
+.registercolumn{
     float: left;
     width: 230px;
     height: 50px;
@@ -95,11 +95,11 @@ body {
     font-size: 20px;
     text-align: center;
 }
-.div10 a{
+.registercolumn a{
     text-decoration: none;
     color:#fff;
 }
-.div11{
+.logoncolumn{
     float:right;
     margin-right: 64px;
     margin-bottom: 15px;
@@ -112,42 +112,42 @@ body {
     border: 1px solid #bbbbbb;
     
 }
-.div11 a {
+.logoncolumn a {
     text-decoration: none;
     color:#555555;
 }
-.div12 img {
+.microblog img {
     float:left;
     height: 100%;
 }
-.div12 {
+.microblog {
     float:left;
     margin-left: 23px;;
     width:160px;
     height: 30px;
     
 }
-.div13 {
+.blogtext{
     float:left;
     margin-left: 16px;
     line-height: 30px;
 }
-.div13 a{
+.blogtext a{
     font-size: 15px;
     text-decoration: none;
     color:#777777;
 }
-.div14 {
+.qq {
     float:left;
     height: 30px;
     width: 160px;
 }
-.div15{
+.qqtext{
     float:right;
     line-height: 30px;
     margin-right: 32px;
 }
-.div15 a{
+.qqtext a{
     font-size: 15px;
     text-decoration: none;
     color:#777777;
