@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.message_board {
+    widtH: 500px;
+    height: 500px;
+    margin: 20px auto;
+    /* background-color: pink; */
+    border: 2px solid #ccc;
+}
+
+textarea {
+    display: block;
+    margin: 10px auto;
+    resize: none;
+    outline: none;
+}
+
+.handon {
+    display: incline-block;
+}
+
+.delete {
+    display: inline-block;
+}
+
+button {
+    margin: 10px auto;
+}
+
+.click {
+    text-align: center;
+}

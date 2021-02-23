@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input {
+    outline: none;
+}
+
+span {
+    display: block;
+}
+
+.search {
+    margin-left: 5px;
+}
+
+.content {
+    border: 2px solid black;
+    border-radius: 3px;
+    margin-right: 5px;
+    text-indent: 3px;
+}
+
+.outcome {
+    border: 1px solid #c9c9c9;
+    border-radius: 2px;
+}
