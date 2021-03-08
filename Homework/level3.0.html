@@ -1,0 +1,35 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-07 18:17:14
+ * @LastEditTime: 2021-03-07 20:13:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Homework\level3.0.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Animal() {　　　　
+            this.species = "动物";　　
+        }
+
+        function Cat(name, color) {　　　　
+            this.name = name;　　　　
+            this.color = color;　　
+            Animal.call(this); //最简单的方法，借用call函数，改变this指向
+        }
+        var cat1 = new Cat("大毛", "黄色");
+        console.log(cat1.species); // 动物
+    </script>
+</body>
+
+</html>

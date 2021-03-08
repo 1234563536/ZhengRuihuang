@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            constructor() {　　　　
+                this.species = "动物";　　
+            }
+        }
+        class Cat extends Animal {
+            constructor(name, color) {　　　
+                super();　 //借用super关键字，改变This指向,同时用类的继承extends声明子函数
+                this.name = name;　　　　
+                this.color = color;　　
+            }
+        }
+        var cat1 = new Cat("大毛", "黄色");
+        console.log(cat1.species);
+    </script>
+</body>
+
+</html>

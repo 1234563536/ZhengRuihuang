@@ -1,0 +1,35 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-07 20:12:48
+ * @LastEditTime: 2021-03-07 20:17:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Homework\level3.2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Animal() {　　　　
+            this.species = "动物";　　
+        }
+
+        function Cat(name, color) {　　　　
+            this.name = name;　　　　
+            this.color = color;　　
+        }
+        var cat1 = new Cat("大毛", "黄色");
+        cat1.species = "动物"; //拷贝的方式
+        consol.log(cat1.species); // 动物
+    </script>
+</body>
+
+</html>

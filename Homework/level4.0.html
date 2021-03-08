@@ -1,0 +1,68 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-07 20:28:44
+ * @LastEditTime: 2021-03-07 20:39:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Homework\level4.0.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function deepClone(obj) {
+        let objClone = Array.isArray(obj) ? [] : {};
+        if (obj && typeof obj === "object") {
+            for (key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    //判断ojb子元素是否为对象，如果是，递归复制
+                    if (obj[key] && typeof obj[key] === "object") {
+                        objClone[key] = deepClone(obj[key]);
+                    } else {
+                        //如果不是，简单复制
+                        objClone[key] = obj[key];
+                    }
+                }
+            }
+        }
+        return objClone;
+    }
+    var data = {
+        age: 18,
+        name: "liuruchao",
+        education: ["小学", "初中", "高中", "大学", undefined, null],
+        likesFood: new Set(["fish", "banana"]),
+        friends: [{
+            name: "summer",
+            sex: "woman"
+        }, {
+            name: "daWen",
+            sex: "woman"
+        }, {
+            name: "yang",
+            sex: "man"
+        }],
+        work: {
+            time: "2019",
+            project: {
+                name: "test",
+                obtain: ["css", "html", "js"]
+            }
+        },
+        play: function() {
+            console.log("玩滑板");
+        }
+    }
+    b = deepClone(data);
+
+    console.log(data, b);
+</script>
+</body>
+
+</html>
