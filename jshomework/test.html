@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-08 13:08:47
+ * @LastEditTime: 2021-03-10 17:50:05
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \jshomework\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            outline: none;
+        }
+        
+        span {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .right {
+            color: green;
+        }
+        
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="uname"><span>请输入用户名</span>
+    <script>
+        var reg = /^[a-zA-Z0-9_-]{6,16}$/;
+        var uname = document.querySelector('uname');
+        uname.onblur = function() {
+            if (reg.test(this.value)) {
+                span.className = 'right';
+                span.innerHTML = '用户名格式输入正确'
+            } else {
+                span.className = 'wrong';
+                span.innerHTML = '用户名格式输入错误'
+            }
+        }
+    </script>
+</body>
+
+</html>

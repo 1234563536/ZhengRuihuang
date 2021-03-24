@@ -1,0 +1,89 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-24 13:01:41
+ * @LastEditTime: 2021-03-24 17:30:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \JS第三次课\leve2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        textarea {
+            resize: none;
+            outline: none;
+            margin-left: 200px;
+        }
+        
+        .list {
+            margin-left: 200px;
+        }
+        
+        ul {
+            margin-top: 50px;
+        }
+        
+        li {
+            width: 545px;
+            padding: 5px;
+            background-color: #00FFFF;
+            color: black;
+            font-size: 14px;
+            margin: 15px 0;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="80" rows="10" placeholder="亲!双击可以删除言论哟!"></textarea>
+    <button class="post">点击发布</button>
+    <div class="list">
+        <ul>
+
+        </ul>
+    </div>
+
+    <script>
+        // 1. 获取元素
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        var num = 0;
+        // 2. 注册事件
+        btn.onclick = function() {
+            num++;
+            if (text.value == '') {
+                alert('您没有输入内容');
+                num--;
+                return false;
+            } else {
+                var li = document.createElement('li');
+                li.innerHTML = num + text.value;
+                ul.insertBefore(li, ul.children[0]);
+            }
+            lis = document.querySelectorAll('li');
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].ondblclick = function() {
+                    lis[i].style.display = 'none';
+
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
