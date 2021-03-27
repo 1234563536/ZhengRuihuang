@@ -1,0 +1,344 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-25 23:36:37
+ * @LastEditTime: 2021-03-28 02:16:36
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \第六天\JS第三次课\level3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            margin-left: 300px;
+            margin-top: 100px;
+        }
+        
+        div {
+            position: relative;
+            background-color: greenyellow;
+            width: 1000px;
+            height: 500px;
+            margin-top: 20px;
+        }
+        
+        button {
+            margin-left: 20px;
+            background-color: #ffa400;
+            border: 0;
+            outline: none;
+            border-radius: 5px;
+        }
+        
+        ul li {
+            float: left;
+            position: absolute;
+            list-style: none;
+        }
+        
+        .afterleftclick {
+            background-color: pink;
+            bottom: 0px;
+        }
+        
+        .summary {
+            float: left;
+            left: 300px;
+            width: 1000px;
+            height: 5000px;
+            background-color: white;
+        }
+        
+        .summary ol li {
+            font-size: 30px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <input type="text">
+        <button class="b1">左侧入</button>
+        <button class="b2">右侧入</button>
+        <button class="b3">左侧出</button>
+        <button class="b4">右侧出</button>
+        <button class="b5">重新排序</button>
+        <button class="b6">清空</button>
+        <button class="b7">随机生成</button>
+        <div ciass="bgc">
+            <ul>
+
+            </ul>
+        </div>
+    </main>
+    <div class="summary">
+        <ol>
+            <li>现总结整个算法的功能实现原理和自我反思</li>
+            <li>在输入框中的元素需要是[10,100] 否则弹出警示框</li>
+            <li>第一个按钮是左输入，也就是说可以用input里面的值，生成小li，从而给插入到绿色背景中</li>
+            <li>第二个按钮是右输入，原理在于利用insertBefor和appendChild两个插入函数的不同来区别，因为一个是在元素最前面插入，一个是在元素末尾插入</li>
+            <li>插入的难处在于：每次插入后，都要重新遍历所有的小li，以此来更改所有小li的宽度和左浮动的值，因为小li的高度和下浮动的值是固定的，所以如何准确确定另外两个值，是本题的难点之一</li>
+            <li>需要注意的是我给这个背景所设置的最大容纳量为25，也就是说超过这个数量的小li,就会自动弹出警示框，提示你需要删除小l了</li>
+            <li>第三个第四个按钮是左右输出按钮，用到的原理就是removeChild这个函数</li>
+            <li>需要注意的是当里面没有li时，会弹出警示框，显示不可再删除，需要我们添加元素</li>
+            <li>重新排序是这个作业的第二大难题，我最开始的思维是用动画移动函数来进行操作，也就是像视频中的那样进行缓慢肉眼可视化的移动， 但是在执行过程中遇到许多问题，也就是说我把这个小li移到了最后，但是这个小li的索引号没有变，在这一点上，我没有想到解决策略，所以就放弃了这种方法(动画函数已经引入到了源文件，但是没有使用)。
+            </li>
+            <li>因此在这个排序方法上，我用了最简单的方法，也就是说每次循环遍历找到最大值，并且将对应的li的信息记录下来，删除这个li,然后再调用插入函数，将它插入到最前面。这样往返如此，最大的元素第一次被插入到最前面，但是还有更多的li插入到它的前面，因此实现的效果就是排序的效果，从小到大。</li>
+            <li>在点击重新排序后，可以点击任意按钮进行相关的功能，并且可以插入元素后重新排序</li>
+            <li>第六个清空按钮的原理比较简单，利用removeChild把li全部删掉，需要注意的是，如果没有元素可以清除，系统会弹出警示框，告诉用户插入元素</li>
+            <li>随机生成的思想是：利用随机数，在页面加载时，生成20个10-100的随机整数，并且把这些值储存在数组中，并且作为每个li的高度</li>
+            <li>以上便是整个小作业的整体思路与感想</li>
+            </li>
+        </ol>
+    </div>
+    <script>
+        var clickleft = 0;
+        var clickright = 0;
+        var arr = [];
+        var count = [];
+        var btns = document.querySelectorAll('button');
+        var input = document.querySelector('input');
+        var bgc = document.querySelector('div');
+        var ul = bgc.querySelector('ul');
+        bgc.addEventListener('click', function() {})
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('mouseover', function() {
+                btns[i].style.backgroundColor = '#ffc773';
+            })
+        }
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('mouseout', function() {
+                btns[i].style.backgroundColor = '#ffa400';
+            })
+        }
+
+        function animate(obj, target, callback) {
+            // console.log(callback);  callback = function() {}  调用的时候 callback()
+
+            // 先清除以前的定时器，只保留当前的一个定时器执行
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                // 步长值写到定时器的里面
+                // 把我们步长值改为整数 不要出现小数的问题
+                // var step = Math.ceil((target - obj.offsetLeft) / 10);
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    // 停止动画 本质是停止定时器
+                    clearInterval(obj.timer);
+                    // 回调函数写到定时器结束里面
+                    // if (callback) {
+                    //     // 调用函数
+                    //     callback();
+                    // }
+                    callback && callback();
+                }
+                // 把每次加1 这个步长值改为一个慢慢变小的值  步长公式：(目标值 - 现在的位置) / 10
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+            }, 15);
+        }
+        //以下是右按钮进行输入
+        function rightinput() {
+            sort = 0;
+            if (input.value < 10 || input.value > 100) {
+                alert("请输入10-100的数");
+            } else {
+                if (ul.children.length >= 25) {
+                    alert("添加的数太多啦！最多只能25个");
+                } else {
+                    // clickright++;
+                    var li = document.createElement('li');
+                    li.innerHTML = input.value;
+                    li.value = input.value;
+                    li.className = 'afterleftclick';
+                    li.style.height = input.value * 5 + 'px';
+                    ul.appendChild(li);
+                    createli();
+                }
+            }
+        }
+        //以下是左按钮进行输入
+        function leftinput() {
+            sort = 0;
+            if (input.value < 10 || input.value > 100) {
+                alert("请输入10-100的数");
+            } else {
+                if (ul.children.length >= 25) {
+                    alert("添加的数太多啦！最多只能25个");
+                } else {
+                    // clickleft++;
+                    create(input.value);
+                }
+            }
+        }
+        //左输出后 将最左边的元素去掉
+
+        function leftoutput() {
+            if (ul.children.length == 0) {
+                alert("不好意思亲，已经没有元素了，您不可以再删除了！")
+            } else {
+                // clickleft--;
+                ul.removeChild(ul.children[0]);
+                createli();
+            }
+        }
+        //右输出后 将最右边的元素去掉
+
+        function rightoutput() {
+            if (ul.children.length == 0) {
+                alert("不好意思亲，已经没有元素了，您不可以再删除了！")
+            } else {
+                //clickright--;
+                ul.removeChild(ul.children[ul.children.length - 1]);
+                createli();
+            }
+        }
+
+
+        function unique(arr) {
+            var ret = []
+            var hash = {}
+
+            for (var i = 0; i < arr.length; i++) {
+                var item = arr[i]
+                var key = typeof(item) + item
+                if (hash[key] !== 1) {
+                    ret.push(item)
+                    hash[key] = 1
+                }
+            }
+
+            return ret
+        }
+        //重新排序 最难的一个功能 需要用到动画移动函数//这样做不行
+        //第二种方法 我把排序理解成 删除那个最大的元素 都最右边插入这个元素
+        var p = 0;
+        var index = 0;
+        var sort = 0;
+
+        function resort() {
+            if (sort == 0) {
+                if (ul.children.length == 0) {
+                    alert("亲！还没有创建元素，不能重新排序");
+                } else {
+                    sort = 1;
+                    for (let i = 0; i < ul.children.length; i++) {
+                        arr[i] = Number(ul.children[i].value);
+                    }
+                    arr.sort(function(a, b) {
+                        return b - a
+                    });
+                    newarr = unique(arr);
+                    for (var i = 0; i < newarr.length; i++) {
+                        count[i] = 0;
+                    }
+                    for (var j = 0; j < newarr.length; j++) {
+                        for (var i = 0; i < arr.length; i++) {
+                            if (arr[i] == newarr[j]) {
+                                count[j]++;
+                            }
+                        }
+                    }
+
+                    for (p = 0; p < newarr.length; p++) {
+                        var h;
+
+                        //删除li
+                        for (var n = 0; n < count[p]; n++) {
+                            for (var i = 0; i < ul.children.length; i++) {
+                                strheight = ul.children[i].style.height;
+                                var wzheight = strheight.indexOf('p');
+                                var resheight = Number(strheight.substring(0, wzheight));
+                                if (newarr[p] * 5 == resheight) { //说明这个是最大值 给老子移
+                                    index++;
+                                    h = newarr[p];
+                                    ul.removeChild(ul.children[i]);
+                                    break;
+                                }
+                            }
+                        }
+                        for (var n = 0; n < count[p]; n++) {
+                            create(h)
+                        }
+
+                    }
+                }
+            }
+        }
+        var number = 0
+
+        function clear() {
+            if (ul.children.length != 0) {
+                for (let i = 0; i < ul.children.length; i++) {
+                    setTimeout(function() {
+                        ul.removeChild(ul.children[0]);
+                    }, 1)
+                    number = 0;
+                }
+            } else {
+                alert("没有元素可以清除了，亲！建议你添加元素！");
+            }
+        }
+
+        function createnum() {
+            num = [];
+            for (var i = 0; i < 20; i++) {
+                num[i] = Math.round(Math.random() * 90 + 10);
+            }
+        }
+
+        function randomcreate() {
+            createnum();
+            if (number == 1) {
+                alert("元素太多了，请先清空再生成");
+            } else {
+                number++;
+                for (var i = 0; i < 20; i++) {
+                    create(num[i]);
+                }
+            }
+        }
+
+        function createli() {
+            for (let j = 0; j < ul.children.length; j++) {
+                var li = ul.querySelectorAll('li');
+                if (ul.children.length == 1) {
+                    li[j].style.left = 7.7 + 'px';
+                    li[j].style.width = 1000 / 2 + 'px';
+                } else {
+                    li[j].style.width = 800 / ul.children.length + 'px';
+                    li[j].style.left = ((j + 1) * (200 / (ul.children.length + 1)) + 800 / ul.children.length * j) + 'px'; //定位的距离需要不断更改，插入一个元素后 所有的元素位置都要更改
+                }
+
+            }
+        }
+
+        function create(a) {
+            var li = document.createElement('li');
+            input.value = a;
+            li.innerHTML = input.value;
+            li.value = input.value;
+            li.className = 'afterleftclick';
+            li.style.height = input.value * 5 + 'px';
+            ul.insertBefore(li, ul.children[0]);
+            createli()
+        }
+        btns[0].addEventListener('click', leftinput);
+        btns[1].addEventListener('click', rightinput);
+        btns[2].addEventListener('click', leftoutput);
+        btns[3].addEventListener('click', rightoutput);
+        btns[4].addEventListener('click', resort);
+        btns[5].addEventListener('click', clear);
+        btns[6].addEventListener('click', randomcreate);
+    </script>
+</body>
+
+</html>
