@@ -1,0 +1,77 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-06 23:26:59
+ * @LastEditTime: 2021-04-07 17:49:39
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \JS补充课作业\level1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function change(s) {
+            var str = "";
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] !== "�" && s[i] !== "?" && s[i - 1] === "?") { //转化成大写
+                    var num = s[i].charCodeAt() - 32;
+
+                    var a = String.fromCharCode(num);
+                    str = str + a;
+                    continue;
+                }
+                str = str + s[i];
+            }
+            return str;
+        }
+
+        function stripscript(s) {
+            var pattern = new RegExp("[�?]")
+            var rs = "";
+            for (var i = 0; i < s.length; i++) {
+                rs = rs + s.substr(i, 1).replace(pattern, '?');
+            }
+            return rs;
+        }
+
+        function del(s) {
+            var b = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            var j = 0;
+            var str2 = "??";
+            var str3 = "???";
+            var str4 = "????";
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] == "?") {
+                    b[j]++;
+                    if (s[i + 1] != "?") {
+                        j++;
+                    }
+                }
+            }
+            for (let j = 0; j < b.length; j++) {
+                if (b[j] == 4) {
+                    s = s.replace(str4, ' ');
+                } else if (b[j] == 3) {
+                    s = s.replace(str3, ' ');
+                } else if (b[j] == 2) {
+                    s = s.replace(str2, ' ');
+                }
+            }
+            return s;
+        }
+        let str = "I'm?���going�??�to�?�take�??�a?�trip�?�to��?daocheng�?�on��May Day."
+        str = change(str);
+        rs = stripscript(str);
+        console.log(del(rs));
+    </script>
+</body>
+
+</html>
