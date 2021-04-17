@@ -1,58 +1,55 @@
-<!--
- * @Author: your name
- * @Date: 2021-04-07 19:35:23
- * @LastEditTime: 2021-04-10 00:32:49
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \JS补充课作业\level3.html
--->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>level3</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <script>
         function Student(name) {
-
             function People(name) {
-                console.log("Hi! This is " + name + "!");
-                return [new Man(), this];
+                setTimeout(function() {
+                    console.log('Hi! This is ' + name + '!');
+                }, 0)
             }
 
-            function Man() {
-
-            }
             People.prototype.sleep = function(time) {
-                setTimeout(() => {
-                    console.log("Wake up after " + time);
-                }, time * 1000);
-                return new Man();
+                setTimeout(function() {
+                    var start = (new Date()).getTime();
+                    while ((new Date()).getTime() - start < time * 1000) {
+                        continue;
+                    }
+                    console.log('Wake up after ' + time);
+                }, 0)
+                return this;
             }
 
-            Man.prototype.sleepFirst = function(time) {
-                setTimeout(() => {
-                    console.log("Wake up after " + time);
-                }, time * 1000);
-                // return new Woman();
-                return new Man();
+            People.prototype.sleepFirst = function(time) {
+                var start = (new Date()).getTime();
+                while ((new Date()).getTime() - start < time * 1000) {
+                    continue;
+                }
+                console.log('Wake up after ' + time);
+                return this;
+            }
+            People.prototype.study = function(course) {
+                setTimeout(function() {
+                    console.log('Study ' + course + '~');
+                }, 0)
+                return this;
             }
 
-            Man.prototype.study = function(course) {
-                console.log("Study " + course + "~");
-                return new Man();
-            }
             return new People(name);
         }
-        // Student('fxy');
-        Student('fxy')[1].sleep(3).study('javascript');
-        Student('fxy')[0].study('javascript').study('Vue');
-        Student('fxy')[0].sleepFirst(5).study('Ajax');
+        Student('fxy');
+        Student('fxy').sleep(3).study('javascript');
+        Student('fxy').study('javascript').study('Vue');
+        Student('fxy').sleepFirst(5).study('Ajax');
     </script>
 </body>
 

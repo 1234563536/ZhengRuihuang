@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-07 19:06:10
- * @LastEditTime: 2021-04-07 20:40:03
+ * @LastEditTime: 2021-04-17 21:12:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \JS补充课作业\level2.html
@@ -18,12 +18,12 @@
 
 <body>
     <script>
-        //for (var i = 0; i < 5; i++) {
-        //setTimeout(function() {
-        //console.log(new Date, i);
-        //  }, 1000);
-        //}
-        //console.log(new Date, i);
+        // for (var i = 0; i < 5; i++) {
+        //     setTimeout(function() {
+        //         console.log(new Date, i, ",");
+        //     }, 1000);
+        // }
+        // console.log(new Date, i, "->");
         //运行结果表示为 
         //Wed Apr 07 2021 19: 17: 17 GMT + 0800(中国标准时间) 5
         //Wed Apr 07 2021 19: 17: 18 GMT + 0800(中国标准时间) 5
@@ -32,22 +32,26 @@
         //Wed Apr 07 2021 19: 17: 18 GMT + 0800(中国标准时间) 5
         //Wed Apr 07 2021 19: 17: 18 GMT + 0800(中国标准时间) 5
         //5->5,5,5,5,5
-        //var a = 0;
-        //for (let i = 0; i < 5; i++) {
-        //  a = i + 1;
-        //setTimeout(function() {
-        //   console.log(new Date, i);
-        //}, 1000);
-        //}
-        //console.log(new Date, a);
-        //上述代码更改为引入一个全局变量a 在for循环里面赋值 并且将Var改成Let
-        for (let i = 0; i < 5; i++) {
-            setInterval(function() {
-                console.log(new Date, i);
-            }, 1000);
+        // for (var i = 0; i < 5; i++) {
+        //     ((i) => {
+        //         setTimeout(function() {
+        //             console.log(new Date, i);
+        //         }, 1000);
+        //     })(i);
+        // }
+        // console.log(new Date, i);
+
+        for (var i = 0; i < 5; i++) {
+            ((i) => {
+                setTimeout(function() {
+                    console.log(new Date, i);
+                }, 1000 * i);
+            })(i)
         }
-        var i = 0;
-        console.log(new Date, i);
+        var i = 5;
+        setTimeout(function() {
+            console.log(new Date, i);
+        }, 5000);
     </script>
 </body>
 
