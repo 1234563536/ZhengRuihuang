@@ -1,0 +1,117 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-21 20:25:42
+ * @LastEditTime: 2021-04-21 20:41:39
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \zhangsan\06_ajaxacross_jquery\level4.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //用promise封装一个ajax
+    function getJSON(url) {
+        return new Promise(function(resolve, reject) {
+            var XHR = new XMLHttpRequest();
+            XHR.open('GET', url, true);
+            XHR.send();
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState == 4) {
+                    if (XHR.status == 200) {
+                        try {
+                            var response = JSON.parse(XHR.responseText);
+                            resolve(response);
+                        } catch (e) {
+                            reject(e);
+                        }
+                    } else {
+                        reject(new Error(XHR.statusText));
+                    }
+                }
+            }
+        })
+    }
+
+    getJSON(url).then(resp => console.log(resp));
+
+
+    //封装一个fetch
+    function to_String(obj, arr = [], idx = 0) {
+        for (let item in obj) {
+            arr[idx++] = [item, obj[item]]
+        }
+        return new URLSearchParams(arr).toString()
+    }
+
+    /**
+     * 真正的请求
+     * @param url 请求地址
+     * @param options 请求参数
+     * @param method 请求方式
+     */
+    function commonFetcdh(url, options, method = 'GET') {
+        const searchStr = to_String(options)
+        let initObj = {}
+        if (method === 'GET') { // 如果是GET请求，拼接url
+            url += '?' + searchStr
+            initObj = {
+                method: method,
+                credentials: 'include'
+            }
+        } else {
+            initObj = {
+                method: method,
+                credentials: 'include',
+                headers: new Headers({
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }),
+                body: searchStr
+            }
+        }
+        fetch(url, initObj).then((res) => {
+            return res.json()
+        }).then((res) => {
+            return res
+        })
+    }
+
+    /**
+     * GET请求
+     * @param url 请求地址
+     * @param options 请求参数
+     */
+    function GET(url, options) {
+        return commonFetcdh(url, options, 'GET')
+    }
+
+    /**
+     * POST请求
+     * @param url 请求地址
+     * @param options 请求参数
+     */
+    function POST(url, options) {
+        return commonFetcdh(url, options, 'POST')
+    }
+    GET('https://www.baidu.com/search/error.html', {
+        a: 1,
+        b: 2
+    })
+    POST('https://www.baidu.com/search/error.html', {
+        a: 1,
+        b: 2
+    })
+</script>
+
+<body>
+
+</body>
+
+</html>

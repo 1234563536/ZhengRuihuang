@@ -1,0 +1,170 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-10 20:07:50
+ * @LastEditTime: 2021-04-21 20:22:53
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Ajax_practice\example1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册界面</title>
+    <script type="text/javascript" src="jquery.js"></script>
+</head>
+
+<body>
+    <h1>注册界面</h1>
+    <form action="">
+        用户名:<input type="text" id="username" placeholder="默认值是zhangsan"><span id="username_result"></span><br> 邮箱:
+        <input type="text" id="email"><span id="email_result"></span><br>
+    </form>
+    <script>
+        function Ajax(obj) {
+            var defaults = {
+                type: "get",
+                url: "#",
+                dataType: "json",
+                data: {},
+                async: true,
+                success: function(result) {
+                    console.log(result);
+                }
+            };
+            for (var key in obj) {
+                defaults[key] = obj[key];
+            }
+            var xhr = null;
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            var params = "";
+            for (var attr in defaults.data) {
+                params += attr + "=" + defaults.data[attr] + "&";
+            }
+
+            if (params) {
+                params = params.substring(0, params.length - 1);
+            }
+            Ajax.get = function(obj) {
+                defaults.url += "?" + params;
+                xhr.open(defaults.type, defaults.url, defaults.async);
+                xhr.send(null);
+                if (defaults.async) {
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4) {
+                            if (xhr.status == 200) {
+                                var result = null;
+                                if (defaults.dataType == "json") {
+                                    result = xhr.responseText;
+                                    result = JSON.parse(result);
+                                } else if (defaults.dataType == "xml") {
+                                    result = xhr.responseXML;
+                                } else {
+                                    result = xhr.responseText;
+                                }
+                                defaults.success(result);
+                            }
+                        }
+                    }
+                } else {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            var result = null;
+                            if (defaults.dataType == "json") {
+                                result = xhr.responseText;
+                                result = JSON.parse(result);
+                            } else if (defaults.dataType == "xml") {
+                                result = xhr.responseXML;
+                            } else {
+                                result = xhr.responseText;
+                            }
+                            defaults.success(result);
+                        }
+                    }
+                }
+            }
+            Ajax.post = function(obj) {
+                xhr.open(defaults.type, defaults.url, defaults.async);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send(params);
+                if (defaults.async) {
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4) {
+                            if (xhr.status == 200) {
+                                var result = null;
+                                if (defaults.dataType == "json") {
+                                    result = xhr.responseText;
+                                    result = JSON.parse(result);
+                                } else if (defaults.dataType == "xml") {
+                                    result = xhr.responseXML;
+                                } else {
+                                    result = xhr.responseText;
+                                }
+                                defaults.success(result);
+                            }
+                        }
+                    }
+                } else {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            var result = null;
+                            if (defaults.dataType == "json") {
+                                result = xhr.responseText;
+                                result = JSON.parse(result);
+                            } else if (defaults.dataType == "xml") {
+                                result = xhr.responseXML;
+                            } else {
+                                result = xhr.responseText;
+                            }
+                            defaults.success(result);
+                        }
+                    }
+                }
+            }
+        }
+        window.onload = function() {
+            var username = document.querySelector("#username");
+            var email = document.querySelector("#email");
+            username.onblur = function() {
+                var usernameValue = username.value;
+                obj = {
+                    url: "http://www.zhangsan.com/Ajax_practice/server/checkUsername.php",
+                    type: "get",
+                    dataType: "text",
+                    data: {
+                        uname: usernameValue
+                    },
+                    async: true,
+                    success: function() {},
+                }
+                const ajax = new Ajax(obj);
+                ajax.get(obj);
+            };
+
+            email.onblur = function() {
+                var emailValue = email.value;
+                obj = {
+                    url: "http://www.zhangsan.com/Ajax_practice/server/checkEmail.php",
+                    type: "post",
+                    dataType: "text",
+                    data: {
+                        e: emailValue
+                    },
+                    async: true,
+                    success: function() {},
+                }
+                const ajax = new Ajax(obj);
+                ajax.post(obj);
+            };
+        }
+    </script>
+</body>
+
+</html>

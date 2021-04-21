@@ -1,0 +1,74 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-21 16:00:38
+ * @LastEditTime: 2021-04-21 19:05:32
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \zhangsan\06_ajaxacross_jquery\level2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myAjax(obj) {
+            var defaults = {
+                type: "get",
+                url: "#",
+                data: {},
+                success: function(data) {},
+                jsonp: "callback",
+                jsonpCallback: "hehe"
+            };
+
+            for (var key in obj) {
+                defaults[key] = obj[key];
+            }
+
+            var params = "";
+            for (var attr in defaults.data) {
+                params += attr + "=" + defaults.data[attr] + "&";
+            }
+            if (params) {
+                params = params.substring(0, params.length - 1);
+                defaults.url += "?" + params;
+            }
+
+            defaults.url += "&" + defaults.jsonp + "=" + defaults.jsonpCallback;
+            console.log(defaults.url);
+
+            var script = document.createElement("script");
+            script.src = defaults.url;
+
+            window[defaults.jsonpCallback] = function(data) {
+                defaults.success(data);
+            };
+
+            var head = document.querySelector("head");
+            head.appendChild(script);
+
+        }
+        window.onload = function() {
+            var keywordValue = "雨";
+            myAjax({
+                url: "https://suggest.taobao.com/sug",
+                data: {
+                    q: keywordValue
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

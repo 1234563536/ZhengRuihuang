@@ -1,0 +1,148 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-18 23:45:20
+ * @LastEditTime: 2021-04-21 17:57:07
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \zhangsan\06_ajaxacross_jquery\level1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        tr td:nth-child(2) span {
+            color: red;
+        }
+        
+        tr th span {
+            float: left;
+            color: rgb(99, 99, 99);
+            font-weight: 400;
+        }
+        
+        input {
+            outline: none;
+        }
+        
+        tr td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        tbody tr:nth-child(odd) {
+            background-color: rgb(221, 219, 219);
+        }
+    </style>
+    <script type="text/javascript" src="myutils.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var btn = document.querySelector("#btn");
+            btn.onclick = function() {
+                var del = document.querySelectorAll('a');
+                if (del.length != 0) {
+                    var tbody = document.querySelector('tbody');
+                    for (var m = 0; m < del.length; m++) {
+                        tbody.removeChild(del[m].parentNode.parentNode);
+
+                    }
+                }
+                var keywordValue = document.querySelector("#keyword").value;
+                console.log(keywordValue);
+                type = 1;
+                limit = 100;
+                myAjax({
+                    url: "http://musicapi.leanapp.cn/search",
+                    data: {
+                        keywords: keywordValue,
+                        type: type,
+                        limit: limit,
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        console.log(data.result.songs[0]);
+                        var tbody = document.querySelector('tbody');
+                        for (var i = 0; i < data.result.songs.length; i++) { // 外面的for循环管行 tr
+                            // 1. 创建 tr行
+                            var tr = document.createElement('tr');
+                            tbody.appendChild(tr);
+                            // 2. 行里面创建单元格(跟数据有关系的3个单元格) td 单元格的数量取决于每个对象里面的属性个数  for循环遍历对象 datas[i]
+                            for (var k = 0; k < 4; k++) { // 里面的for循环管列 td
+                                // 创建单元格 
+                                var td = document.createElement('td');
+                                // 把对象里面的属性值 datas[i][k] 给 td  
+                                // console.log(datas[i][k]);
+                                if (k == 0) {
+                                    if (i < 9) {
+                                        var temp = i + 1;
+                                        td.innerHTML = "<span>" + "0" + temp + "</span>";
+                                    } else if (i >= 9) {
+                                        var temp = i + 1;
+                                        td.innerHTML = "<span>" + temp + "</span>";
+                                    }
+
+                                }
+                                if (k == 1) {
+                                    td.innerHTML = data.result.songs[i].name + "<span>  SQ</span>";
+                                }
+                                if (k == 2) {
+                                    td.innerHTML = data.result.songs[i].artists[0].name;
+                                }
+                                if (k == 3) {
+                                    td.innerHTML = data.result.songs[i].album.name;
+                                }
+
+                                tr.appendChild(td);
+                            }
+                            // 3. 创建有删除2个字的单元格 
+                            var td = document.createElement('td');
+                            td.innerHTML = '<a href="javascript:;">忽略此歌曲 </a>';
+                            tr.appendChild(td);
+                        };
+                        var as = document.querySelectorAll('a');
+                        for (var i = 0; i < as.length; i++) {
+                            as[i].onclick = function() {
+                                // 点击a 删除 当前a 所在的行(链接的爸爸的爸爸)  node.removeChild(child)  
+                                tbody.removeChild(this.parentNode.parentNode);
+                            }
+                        }
+                    },
+                    jsonp: "cb",
+                    jsonpCallback: "haha"
+                });
+            };
+        };
+    </script>
+
+</head>
+
+<body>
+
+    <input type="text" id="keyword" placeholder="请输入歌曲">
+    <input type="button" id="btn" value="查询">
+    <table border="0">
+        <thead>
+            <tr>
+                <th></th>
+                <th><span>音乐标签</span></th>
+                <th><span>歌手</span></th>
+                <th><span>专辑</span></th>
+                <th><span>不感兴趣</span></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>
