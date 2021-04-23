@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-18 23:45:20
- * @LastEditTime: 2021-04-20 23:45:11
+ * @LastEditTime: 2021-04-23 23:51:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \zhangsan\06_ajaxacross_jquery\level1.html
@@ -16,7 +16,7 @@
         ul li span {
             float: left;
             position: absolute;
-            top: 220px;
+            top: 265px;
         }
         
         ul li {
@@ -30,7 +30,7 @@
             width: 200px;
             height: 200px;
             margin-right: 20px;
-            margin-top: 20px;
+            margin-top: 60px;
             border-radius: 10px;
         }
     </style>
@@ -42,24 +42,20 @@
             btn.onclick = function() {
                 var keywordValue = document.querySelector("#keyword").value;
                 console.log(keywordValue);
-                keywordValue = "海阔天空";
-                type = 1000;
-                limit = 10;
+                limit = keywordValue;
                 myAjax({
-                    url: "http://musicapi.leanapp.cn/search",
+                    url: "http://musicapi.leanapp.cn/personalized",
                     data: {
-                        keywords: keywordValue,
-                        type: type,
                         limit: limit,
                     },
                     success: function(data) {
                         console.log(data);
-                        console.log(data.result.playlists.length);
+                        console.log(data.result.length);
                         var liTag = "";
                         var Tag = "";
-                        for (var i = 0; i < data.result.playlists.length; i++) {
-                            var temp1 = data.result.playlists[i].name;
-                            var img = data.result.playlists[i].coverImgUrl;
+                        for (var i = 0; i < data.result.length; i++) {
+                            var temp1 = data.result[i].name;
+                            var img = data.result[i].picUrl;
                             Tag = "<img src=" + img + ">";
                             temp = "<span>" + temp1 + "</span>";
                             liTag += "<li>" + temp + Tag + "</li>";
@@ -78,7 +74,7 @@
 
 <body>
 
-    <input type="text" id="keyword" placeholder="请输入接口名海阔天空">
+    <input type="text" id="keyword" placeholder="请输入接口名">
     <input type="button" id="btn" value="查询">
     <ul>
         <li></li>
