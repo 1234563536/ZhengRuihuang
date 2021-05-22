@@ -1,0 +1,620 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-05-10 22:19:49
+ * @LastEditTime: 2021-05-22 02:26:24
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \code\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/info.css">
+    <link rel="stylesheet" href="./css/scroll.css">
+    <link rel="stylesheet" href="./css/week_scroll.css">
+    <link rel="stylesheet" href="./css/chart-days.css">
+    <link rel="stylesheet" href="./css/sec-living.css">
+    <link rel="stylesheet" href="./css/living-tab.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/sec-share.css">
+    <link rel="stylesheet" href="./css/ct-pop-window.css">
+    <link rel="stylesheet" href="./css/ls-warning.css">
+    <link rel="stylesheet" href="./css/sec-location.css">
+    <script src="js/sec-living.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-nightly@5.1.2-dev.20210512/dist/echarts.min.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=d0429e66edf8fa0622ce28704f359c2e"></script>
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div>
+        <div class="main">
+
+            <header>
+                <div class="left">
+                    <a href="https://so.lenovo.com.cn/"> <img src="weather-background/left.png"></a>
+                </div>
+                <div class="position">
+
+                    <image class="" src="weather-background/定位.png" />
+
+                    <a href="javascript:;">
+                    </a>
+
+                </div>
+                <div class="right">
+                    <img src="weather-background/transpond.png">
+                </div>
+            </header>
+            <nav>
+                <div class="icon">
+                    <p class="til"></p>
+                    <p class="value"></p>
+                </div>
+                <ul class="ls-warning">
+                    <li class="warning">
+                    </li>
+                </ul>
+                <div class="release">
+                    <p class="txt hide"></p>
+                </div>
+                <div class="bg_image">
+                    <div class="layer1 layer"></div>
+                    <div class="layer2 layer"></div>
+                    <div class="layer3 layer"></div>
+                </div>
+                <p class="temperature"></p>
+                <p class="weather"></p>
+                <div class="ct-wind-humidity">
+                    <p class="txt" id="p_top"></p>
+                    <p class="txt" id="p_bottom"></p>
+                </div>
+                <p class="tip"></p>
+            </nav>
+        </div>
+        <!-- C2是晴天 -->
+        <div class="info">
+            <div class="item_left">
+                <div class="top_left">
+                    <p class="date">今天</p>
+                    <p class="temperatures"></p>
+                </div>
+                <div class="bottom_left">
+                    <p class="weather"></p>
+                    <iframe src="" frameborder="0" width="22px" height="22px"></iframe>
+                </div>
+            </div>
+            <div class=" item_right ">
+                <div class="top_right ">
+                    <p class="date">明天</p>
+                    <p class="temperatures"></p>
+                </div>
+                <div class="bottom_right ">
+                    <p class="weather"></p>
+                    <iframe src="" frameborder="0" width="22px" height="22px"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="day">
+            <div class="scroll">
+                <ul>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                    <li>
+                        <p class="txt-time"></p>
+                        <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        <p class="txt-degree"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="week">
+            <div class="week_scroll">
+                <ul>
+                    <li>
+                        <p class="day_p">昨天</p>
+                        <p class="date"></p>
+                        <div class="ct-daytime">
+                            <p class="weather day_wea"></p>
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        </div>
+                        <div class="ct-night">
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                            <p class="weather night_wea"></p>
+                        </div>
+
+                        <p class="wind"></p>
+                        <p class="wind"></p>
+                    </li>
+                    <li>
+                        <p class="day_p">今天</p>
+                        <p class="date"></p>
+                        <div class="ct-daytime">
+                            <p class="weather day_wea"></p>
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        </div>
+                        <div class="ct-night">
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                            <p class="weather night_wea"></p>
+                        </div>
+
+                        <p class="wind"></p>
+                        <p class="wind"></p>
+                    </li>
+                    <li>
+                        <p class="day_p">明天</p>
+                        <p class="date"></p>
+                        <div class="ct-daytime">
+                            <p class="weather day_wea"></p>
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        </div>
+                        <div class="ct-night">
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                            <p class="weather night_wea"></p>
+                        </div>
+
+                        <p class="wind"></p>
+                        <p class="wind"></p>
+                    </li>
+                    <li>
+                        <p class="day_p">后天</p>
+                        <p class="date"></p>
+                        <div class="ct-daytime">
+                            <p class="weather day_wea"></p>
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        </div>
+                        <div class="ct-night">
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                            <p class="weather night_wea"></p>
+                        </div>
+
+                        <p class="wind"></p>
+                        <p class="wind"></p>
+                    </li>
+                    <li>
+                        <p class="day_p"></p>
+                        <p class="date"></p>
+                        <div class="ct-daytime">
+                            <p class="weather day_wea"></p>
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        </div>
+                        <div class="ct-night">
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                            <p class="weather night_wea"></p>
+                        </div>
+
+                        <p class="wind"></p>
+                        <p class="wind"></p>
+                    </li>
+                    <li>
+                        <p class="day_p"></p>
+                        <p class="date"></p>
+                        <div class="ct-daytime">
+                            <p class="weather day_wea"></p>
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        </div>
+                        <div class="ct-night">
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                            <p class="weather night_wea"></p>
+                        </div>
+
+                        <p class="wind"></p>
+                        <p class="wind"></p>
+                    </li>
+                    <li>
+                        <p class="day_p"></p>
+                        <p class="date"></p>
+                        <div class="ct-daytime">
+                            <p class="weather day_wea"></p>
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        </div>
+                        <div class="ct-night">
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                            <p class="weather night_wea"></p>
+                        </div>
+
+                        <p class="wind"></p>
+                        <p class="wind"></p>
+                    </li>
+                    <li class="my_li">
+                        <p class="day_p"></p>
+                        <p class="date"></p>
+                        <div class="ct-daytime">
+                            <p class="weather day_wea"></p>
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                        </div>
+                        <div class="ct-night">
+                            <iframe src="" frameborder="0" width="24px" height="24px"></iframe>
+                            <p class="weather night_wea"></p>
+                        </div>
+
+                        <p class="wind"></p>
+                        <p class="wind"></p>
+                    </li>
+
+                </ul>
+                <div class="chart-days" style="width:500px; height: 50%;">
+                </div>
+                <div class="chart-days-blue " style="width:500px; height: 50%; top:160px">
+                </div>
+            </div>
+        </div>
+        <div class="jd_layout">
+            <!--搜索块-->
+            <!--轮播图-->
+            <div class="jd_banner">
+                <!--图片-->
+                <ul class="jd_bannerImg">
+                    <li>
+                        <div class="firstbox">
+                            <img src="weather-background/white.png">
+                            <div class="box">
+                                <span class="cloth_icon"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">穿衣</span>
+                            </div>
+                            <div class="box1">
+                                <span class="cloth_icon1"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">紫外线</span>
+                            </div>
+                            <div class="box2">
+                                <span class="cloth_icon2"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">感冒</span>
+                            </div>
+                            <div class="box3">
+                                <span class="cloth_icon3"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">洗车</span>
+                            </div>
+                            <div class="box4">
+                                <span class="cloth_icon4"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">运动</span>
+                            </div>
+                            <div class="box5">
+                                <span class="cloth_icon5"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">防晒</span>
+                            </div>
+                            <div class="box6">
+                                <span class="cloth_icon6"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">钓鱼</span>
+                            </div>
+                            <div class="box7">
+                                <span class="cloth_icon7"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">旅游</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lastbox">
+                            <img src="weather-background/white.png">
+                            <div class="box">
+                                <span class="cloth_icon8"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">交通</span>
+                            </div>
+                            <div class="box1">
+                                <span class="cloth_icon9"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">空气</span>
+                            </div>
+                            <div class="box2">
+                                <span class="cloth_icon10"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">舒适度</span>
+                            </div>
+                            <div class="box3">
+                                <span class="cloth_icon11"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">晾晒</span>
+                            </div>
+                            <div class="box4">
+                                <span class="cloth_icon12"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">化妆</span>
+                            </div>
+                            <div class="box5">
+                                <span class="cloth_icon13"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">空调</span>
+                            </div>
+                            <div class="box6">
+                                <span class="cloth_icon14"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">过敏</span>
+                            </div>
+                            <div class="box7">
+                                <span class="cloth_icon15"></span>
+                                <span class="middle"></span>
+                                <span class="bottom">太阳镜</span>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="living-tab ">
+            <span class="current "></span>
+            <span></span>
+        </div>
+        <div class="footer ">
+            <div class="ct-links ">
+                <a href="javascript:; " class="txt-pub ">数据来源于中国天气网</a>
+            </div>
+            <div class="copyright ">Copyright © 1998 - 2021 Tencent. All Rights Reserved</div>
+        </div>
+        <div class="sec-share">
+            <div class="cover web-qq"></div>
+            <div class="ct-share">
+                <ul class="ls-share-btn">
+                    <li>
+                        <span class="py"></span>
+                        <p class="title">朋友</p>
+                    </li>
+                    <li>
+                        <span class="pyq"></span>
+                        <p class="title">朋友圈</p>
+                    </li>
+                    <li>
+                        <span class="qq"></span>
+                        <p class="title">QQ</p>
+                    </li>
+                    <li>
+                        <span class="qqkj"></span>
+                        <p class="title">QQ空间</p>
+                    </li>
+                    <li>
+                        <span class="xlwb"></span>
+                        <p class="title">新浪微博</p>
+                    </li>
+                </ul>
+                <a href="javascript:;" class="btn-close">取消</a>
+            </div>
+        </div>
+        <div class="ct-pop-window">
+            <div class="bg-cover"></div>
+            <div class="ct-air-pop">
+                <div class="ct-main">
+                    <a class="icon-close"></a>
+                    <p class="titl">空气质量指数</p>
+                    <p class="val">31</p>
+                    <p class="level">优</p>
+                </div>
+                <table class="detal">
+                    <tbody>
+                        <tr class="first">
+                            <td>
+                                <p class="val"></p>
+                                <p class="titl">PM2.5</p>
+                            </td>
+                            <td>
+                                <p class="val"></p>
+                                <p class="titl">PM10</p>
+                            </td>
+                            <td>
+                                <p class="val"></p>
+                                <p class="titl">SO2</p>
+                            </td>
+                        </tr>
+                        <tr class="second">
+                            <td>
+                                <p class="val"></p>
+                                <p class="titl">NO2</p>
+                            </td>
+                            <td>
+                                <p class="val"></p>
+                                <p class="titl">O3</p>
+                            </td>
+                            <td>
+                                <p class="val"></p>
+                                <p class="titl">CO</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </table>
+            </div>
+        </div>
+        <div class="sec-location">
+            <div class="ct-search">
+                <a class="btn-cancel">取消</a>
+                <div class="ct-input">
+                    <span class="icon-search"></span>
+                    <input type="text" class="i-location" placeholder="搜索地区">
+                    <span class="icon-delete"></span>
+                </div>
+            </div>
+            <div class="column_city" style="display: none;">
+                <ul></ul>
+                <div class="div-click" style="width: 100%;height: 667px;"></div>
+            </div>
+            <div class="ct-hot-city ">
+                <div class="ct-cur">
+                    <p class="title">当前定位</p>
+                    <a href="javascript:;" class="match opt"></a>
+                </div>
+                <div class="ct-history">
+                    <a href="javascript:;" class="btn-clean"></a>
+                    <p class="title">历史记录</p>
+                    <ul class="ls-city">
+                        <!-- <li class="opt city">北京</li>
+                        <li class="opt city center">沈阳</li>
+                        <li class="opt city">广州</li> -->
+                    </ul>
+                </div>
+                <p class="title">热门城市</p>
+                <ul class="ls-city click_city">
+                    <li class="opt city">北京</li>
+                    <li class="opt city center">上海</li>
+                    <li class="opt city">广州</li>
+                    <li class="opt city">深圳</li>
+                    <li class="opt city center">郑州</li>
+                    <li class="opt city ">西安</li>
+                    <li class="opt city">南京</li>
+                    <li class="opt city center">杭州</li>
+                    <li class="opt city">武汉</li>
+                    <li class="opt city">成都</li>
+                    <li class="opt city center">沈阳</li>
+                    <li class="opt city">天津</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ct-pop-window">
+            <div class="bg-cover"></div>
+            <div class="ct-window">
+                <h3 class="title"></h3>
+                <p class="txt-info"></p>
+                <button class="btn-close">我知道了</button>
+            </div>
+        </div>
+        <div class="living-window">
+            <div class="bg-cover"></div>
+            <div class="ct-window">
+                <h3 class="title"></h3>
+                <p class="txt-info"></p>
+                <button class="btn-close">我知道了</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

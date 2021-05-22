@@ -1,0 +1,21 @@
+.living-tab span {
+    display: inline-block;
+    width: 10px;
+    height: 3px;
+    background: #e3e3e3;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.living-tab {
+    width: 100%;
+    text-align: center;
+    background: #f4f4f4;
+    float: left;
+    position: relative;
+    top: 0px;
+}
+
+.living-tab .current {
+    background: #cecece;
+}

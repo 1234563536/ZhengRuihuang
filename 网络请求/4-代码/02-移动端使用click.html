@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var div=document.querySelector("div");
+    /*添加click事件*/
+    div.addEventListener("click",function(){
+        alert("触发了click");
+    })
+
+    div.addEventListener("touchstart",function(){
+        alert("touchstart");
+    })
+    div.addEventListener("touchmove",function(){
+        alert("touchstart");
+    })
+    div.addEventListener("touchend",function(){
+        alert("touchstart");
+    })
+</script>
+</body>
+</html>

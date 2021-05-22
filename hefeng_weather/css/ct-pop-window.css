@@ -1,0 +1,177 @@
+    .ct-pop-window,
+    .living-window {
+        text-align: center;
+        background-image: -webkit-linear-gradient( -90deg, #3bbcff, #4af4ff);
+        overflow: hidden;
+        position: relative;
+        visibility: hidden;
+    }
+    
+    .show {
+        visibility: visible;
+    }
+    
+    .ct-pop-window .bg-cover,
+    .living-window .bg-cover {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, .43);
+        z-index: 9;
+        display: block;
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+        width: 374.33px;
+        height: 667.33px;
+    }
+    
+    .ct-air-pop {
+        visibility: hidden;
+        opacity: 1;
+        margin-top: -5%;
+        border-radius: 8px;
+        background: #fff;
+        padding-bottom: 20px;
+        position: fixed;
+        width: 250px;
+        height: 372px;
+        left: 50%;
+        top: 45%;
+        margin-left: -125px;
+        z-index: 99;
+        transform: translateY(-40%);
+        transition: all .3s ease 50ms;
+    }
+    
+    .ct-air-pop .ct-main {
+        height: 250px;
+        width: 250px;
+        background-size: 250px auto;
+        background-position-y: 190px;
+        background-repeat: no-repeat;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        padding-top: 50px;
+        background-color: #70defc;
+        background-image: url(../weather-background/grass.PNG);
+    }
+    
+    .ct-main .icon-close {
+        position: absolute;
+        background-image: url(../weather-background/关\ \ 闭.png);
+        height: 20px;
+        width: 20px;
+        top: 11px;
+        right: 11px;
+    }
+    
+    .ct-main .titl {
+        font-size: 14px;
+        color: #fff;
+        line-height: 14px;
+    }
+    
+    .ct-main .val {
+        font-size: 60px;
+        color: #fff;
+        line-height: 60px;
+        margin: 15px 0 20px;
+    }
+    
+    .ct-main .level {
+        border-radius: 6px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 16px;
+        color: #fff;
+        display: inline-block;
+        padding: 0 14px;
+        background-color: #a3d765;
+    }
+    
+    .detal {
+        height: 112px;
+        margin-top: 5px;
+        width: 100%;
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    
+    table td {
+        width: 33.333%;
+        border-left: 1px solid #ececec;
+        border-top: 1px solid #ececec;
+    }
+    
+    .detal .val {
+        font-size: 14px;
+        color: #434343;
+        line-height: 14px;
+        margin-bottom: 5px;
+    }
+    
+    .detal .titl {
+        font-size: 11px;
+        color: #b2b2b2;
+        line-height: 11px;
+    }
+    
+    .ct-window {
+        border-radius: 8px;
+        background: #fff;
+        padding-bottom: 20px;
+        position: fixed;
+        width: 250px;
+        left: 50%;
+        top: 54%;
+        margin-left: -125px;
+        z-index: -999;
+        transition: all .3s ease 50ms;
+        visibility: visible;
+        transform: translateY(-50%);
+        opacity: 0;
+        margin-top: -5%;
+    }
+    
+    .ct-window .title {
+        height: 58px;
+        line-height: 58px;
+        font-size: 20px;
+        color: #fff;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        font-weight: 400;
+        background-color: rgb(245, 210, 113);
+        position: relative;
+        top: -20px;
+    }
+    
+    .ct-window .txt-info {
+        font-size: 14px;
+        color: #434343;
+        line-height: 22px;
+        padding: 27px 20px 20px;
+        text-align: left;
+        position: relative;
+        top: -40px;
+    }
+    
+    .ct-window .btn-close {
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 6px;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        background-color: rgb(245, 210, 113);
+        position: relative;
+        top: 0px;
+        left: 25px
+    }

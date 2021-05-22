@@ -1,0 +1,188 @@
+.sec-location {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: transform .25s ease-in-out;
+    transform: translateZ(0);
+    visibility: hidden;
+}
+
+.sec-location .ct-search {
+    height: 45px;
+    padding: 7px 0;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.sec-location .ct-search .btn-cancel {
+    float: right;
+    font-size: 14px;
+    color: #434343;
+    width: 60px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.sec-location .ct-input {
+    position: relative;
+    margin-right: 60px;
+    margin-left: 13px;
+}
+
+.sec-location .ct-input .icon-search {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    top: 8px;
+    left: 10px;
+    background-size: 14px;
+    background-image: url(../weather-background/搜索.png);
+}
+
+.sec-location .ct-input .icon-delete {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    top: 8px;
+    left: 280px;
+    background-size: 14px;
+    background-image: url(../weather-background/删除文字.png);
+    visibility: hidden;
+}
+
+.i-location {
+    width: 100%;
+    height: 30px;
+    padding: 5px 0 5px 32px;
+    box-sizing: border-box;
+    line-height: 24px;
+    background: #f2f2f2;
+    border-radius: 44px;
+    font-size: 14px;
+    color: #434343;
+    -webkit-appearance: none;
+    border-width: 0;
+}
+
+.ct-hot-city {
+    padding: 12px 13px 7px;
+    position: absolute;
+    top: 45px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+.ct-cur {
+    clear: both;
+    height: 76px;
+}
+
+.title {
+    font-size: 16px;
+    color: #434343;
+    height: 22px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+.ct-cur .opt {
+    box-sizing: border-box;
+    background: #f2f2f2;
+    border-radius: 44px;
+    padding: 0 16px;
+    width: 32%;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #434343;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ct-history {
+    height: 86px;
+}
+
+.ct-history .btn-clean {
+    float: right;
+    background-image: url(../weather-background/删除.png);
+    background-size: 17px 17px;
+    height: 17px;
+    width: 17px;
+    margin-top: 21px;
+}
+
+.ct-history .title {
+    font-size: 16px;
+    color: #434343;
+    height: 22px;
+    line-height: 20px;
+    margin: 10px 0;
+    float: left;
+}
+
+.ct-history .ls-city {
+    clear: both;
+    height: 44px;
+}
+
+.ls-city .opt {
+    box-sizing: border-box;
+    background: #f2f2f2;
+    border-radius: 44px;
+    padding: 0 16px;
+    width: 32%;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #434343;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ls-city .center {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.ct-hot-city>.title {
+    font-size: 16px;
+    color: #434343;
+    height: 22px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+.ls-city {
+    clear: both;
+}
+
+.column_city {
+    position: relative;
+}
+
+.column_city ul li {
+    border-bottom: 1px solid #eee;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    padding-left: 15px;
+}

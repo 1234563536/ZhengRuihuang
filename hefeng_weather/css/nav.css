@@ -1,0 +1,148 @@
+ nav .icon {
+     position: absolute;
+     top: 67px;
+     left: 8px;
+     background-color: #a3d765;
+     /* height: 44px; */
+     width: 37.35px;
+     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 12%);
+     padding: 8px 12px;
+     border-radius: 8px;
+ }
+ 
+ nav .icon .til {
+     opacity: .8;
+     font-size: 12px;
+     color: #fff;
+     line-height: 12px;
+     /* height: 12px; */
+     margin-bottom: 3px;
+ }
+ 
+ nav .icon .value {
+     margin-top: 2px;
+     font-size: 12px;
+     color: #fff;
+     /* height: 14px; */
+     line-height: 14px;
+ }
+ 
+ nav .release {
+     height: 12px;
+ }
+ 
+ nav .release .txt {
+     opacity: 1;
+     font-size: 12px;
+     color: #fff;
+     height: 12px;
+     line-height: 12px;
+     transition: opacity .75s;
+     -webkit-transition: opacity .75s;
+     text-align: center;
+ }
+ 
+ nav .temperature {
+     display: block;
+     float: left;
+     position: absolute;
+     left: 150px;
+     top: 120px;
+     font-size: 62px;
+     color: #fff;
+     line-height: 62px;
+     height: 62px;
+ }
+ 
+ nav .temperature::before {
+     content: url(../weather-background/circle.png);
+     position: relative;
+     top: -35px;
+     left: 100%;
+ }
+ 
+ nav .weather {
+     font-size: 22px;
+     color: #fff;
+     line-height: 22px;
+     height: 22px;
+     margin-top: 8px;
+     position: absolute;
+     left: 170px;
+     top: 185px;
+ }
+ 
+ nav .ct-wind-humidity {
+     height: 14px;
+     position: absolute;
+     left: 160px;
+     top: 225px;
+ }
+ 
+ nav .ct-wind-humidity .txt {
+     height: 14px;
+     line-height: 14px;
+     font-size: 14px;
+     color: #fff;
+     text-align: center;
+     width: 100px;
+     position: absolute;
+     left: -23px;
+ }
+ 
+ .tip {
+     position: absolute;
+     font-size: 16px;
+     color: #fff;
+     line-height: 1.5;
+     height: 100px;
+     left: 110px;
+     top: 280px;
+     width: 200px;
+ }
+ 
+ nav .ct-wind-humidity .txt_top {
+     animation-name: top;
+     animation-duration: 1s;
+     animation-iteration-count: 1;
+     animation-timing-function: ease;
+ }
+ 
+ nav .ct-wind-humidity .txt_bottom {
+     animation-name: bottom;
+     animation-duration: 1s;
+     animation-iteration-count: 1;
+     animation-timing-function: ease;
+ }
+ 
+ @keyframes top {
+     from {
+         top: 0px;
+         opacity: 1;
+     }
+     to {
+         top: -20px;
+         opacity: 0;
+     }
+ }
+ 
+ @keyframes bottom {
+     from {
+         top: 20px;
+         opacity: 0;
+     }
+     to {
+         top: 0px;
+         opacity: 1;
+     }
+ }
+ 
+ nav .ct-wind-humidity .txt:first-child {
+     top: 0px;
+     display: block;
+ }
+ 
+ nav .ct-wind-humidity .txt:last-child {
+     top: 20px;
+     display: block;
+ }

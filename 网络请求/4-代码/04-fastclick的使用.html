@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #F7F7F7;
+        }
+        .box {
+            width: 320px;
+            height: 320px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .tap {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 30px;
+            margin: -100px 0 0 -100px;
+
+            background-color: red;
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        .click {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+            margin: -150px 0 0 -150px;
+            background-color: pink;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+<script src="./js/common.js"></script>
+<script src="./js/zepto.min.js"></script>
+
+<!--引入fastclick文件-->
+<script src="./js/fastclick.js"></script>
+<div class="box">
+    <div class="click">click</div>
+    <div class="tap">tap</div>
+</div>
+<script>
+    var tap=document.querySelector(".tap");
+    var click=document.querySelector(".click");
+
+    /*为tap添加touch事件*/
+    /*tap.addEventListener("touchstart",function(){
+        tap.style.visibility="hidden";
+    })*/
+    /*itcast.tap(tap,function(){
+        tap.style.visibility="hidden";
+    });
+    /!*为click添加click事件*!/
+    click.onclick=function(){
+        console.log(123);
+    }*/
+
+    /*使用zepto中封装好的Tap事件
+    点透：
+    * 在zepto在努力解决这个问题，但是没有完全解决*/
+    /*$(".tap").on("tap",function(){
+        $(this).hide();
+    });
+    $(".click").on("click",function(){
+        console.log("abc");
+    });*/
+
+    /*1.不能点透
+    * 2.touch事件只有在移动端才能使用，在pc无效
+    *
+    * 需求：
+    * 1.在pc和移动端都能响应--click
+    * 2.不能点透--click
+    * 3.操作不能有延迟--touch*/
+
+    /*使用fastclick:在pc端也能响应  解决延迟问题*/
+    /*if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+            /!*参数可以是任意的dom元素，如果写document.body，说明会将document.body下面的所的元素都绑定fastclick*!/
+            FastClick.attach(document.body);
+        }, false);
+    }*/
+
+    $(function() {
+        FastClick.attach(document.body);
+    });
+
+    tap.addEventListener("click",function(){
+        tap.style.visibility="hidden";
+    })
+    click.addEventListener("click",function(){
+        console.log(123);
+    })
+</script>
+</body>
+</html>

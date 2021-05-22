@@ -1,0 +1,25 @@
+.chart-days,
+.chart-days-blue {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 136px;
+    top: 121px;
+}
+
+.size-monitor {
+    position: absolute;
+    inset: 0px;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    /* z-index: -1; */
+}
+
+canvas {
+    display: block;
+    height: 194px!important;
+    width: 550px!important;
+    left: -25px!important;
+    top: -40px!important;
+}

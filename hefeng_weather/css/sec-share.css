@@ -1,0 +1,107 @@
+.sec-share {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    visibility: hidden;
+}
+
+.sec-share .web-qq {
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+}
+
+.sec-share .cover {
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, .5);
+    top: 0;
+    bottom: 0;
+    height: 667px;
+    width: 375px;
+}
+
+.ct-share {
+    height: 132px;
+    background-color: #fff;
+    bottom: -132px;
+    bottom: 0;
+    -webkit-transition: bottom .25s ease-in-out;
+    transition: bottom .25s ease-in-out;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.ls-share-btn {
+    padding: 20px 0 10px;
+    border-bottom: 1px solid #f1f1f1;
+    height: 81px;
+}
+
+.ls-share-btn li {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.ls-share-btn li span {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+}
+
+.xlwb {
+    background-image: url(../weather-background/新浪微博.png);
+}
+
+.py {
+    background-image: url(../weather-background/微信.png);
+}
+
+.pyq {
+    background-image: url(../weather-background/朋友圈.png);
+}
+
+.qq {
+    background-image: url(../weather-background/QQ.png);
+}
+
+.qqkj {
+    background-image: url(../weather-background/QQ空间.png);
+}
+
+.ls-share-btn li .title {
+    height: 10px;
+    line-height: 10px;
+    font-size: 11px;
+    text-align: center;
+    padding-left: 5px;
+}
+
+.btn-close {
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+a {
+    color: black
+}
+
+.bgc {
+    background: rgba(0, 0, 0, .8) 50% 80% no-repeat!important;
+}
+
+.picture {
+    background-image: url(../weather-background/guideqq.png)!important;
+}

@@ -1,0 +1,53 @@
+ .scroll {
+     width: 400%;
+ }
+ 
+ .scroll ul {
+     width: 100%;
+ }
+ 
+ .scroll ul li {
+     width: 3.84615%;
+     float: left;
+     text-align: center;
+     position: relative;
+ }
+ 
+ .txt-time {
+     font-size: 12px;
+     line-height: 12px;
+     height: 12px;
+     color: #999;
+ }
+ 
+ .txt-degree {
+     font-size: 14px;
+     color: #434343;
+     line-height: 14px;
+     height: 14px;
+ }
+ 
+ .day {
+     position: relative;
+ }
+ 
+ .day .scroll ul::-webkit-scrollbar {
+     display: none;
+ }
+ 
+ .scroll ul li iframe {
+     height: 24px;
+     width: 24px;
+     display: block;
+     margin: 15px auto;
+ }
+ 
+ .week_scroll ul li .wind {
+     font-size: 12px;
+     color: #b2b2b2;
+     line-height: 12px;
+     height: 12px;
+     width: 40px;
+     margin: 0 auto 6px;
+     overflow: hidden;
+ }

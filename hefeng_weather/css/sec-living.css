@@ -1,0 +1,205 @@
+/*轮播图样式*/
+
+.jd_banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #b2b2b2;
+}
+
+
+/*.jd_bannerImg{
+    width:800%;
+}*/
+
+.jd_bannerImg {
+    width: 200%;
+    /*position: absolute;  如果使用absolute定位，会造成父容器无法获取由子元素的撑开的高度*/
+    position: relative;
+    /*添加默认偏移*/
+    /*transform: translateX(-10%);*/
+    /*使用定位：使用百分比的时候是参照父容器的宽度*/
+    /* left: -100%;*/
+}
+
+
+/*.jd_bannerImg > li{
+    width:12.5%;
+    float: left;
+}*/
+
+.jd_bannerImg li {
+    width: 50%;
+    float: left;
+    background-color: #f4f4f4!important;
+    height: 190px;
+}
+
+.jd_bannerImg li img {
+    /*1.设置为块元素
+    2.可以将文本的字体大小设置为0
+    3.vertical-align:bottom*/
+    display: block;
+    width: 100%;
+    height: 190px;
+    /* background-color: #fff; */
+    z-index: -999;
+    float: left;
+}
+
+.jd_layout {
+    width: 100%;
+    /*最大宽度*/
+    max-width: 640px;
+    /*最小宽度*/
+    min-width: 320px;
+    margin: 0 auto;
+    background-color: #eee;
+}
+
+ol {
+    list-style: none;
+}
+
+.cloth_icon,
+.cloth_icon1,
+.cloth_icon2,
+.cloth_icon3,
+.cloth_icon4,
+.cloth_icon5,
+.cloth_icon6,
+.cloth_icon7,
+.cloth_icon8,
+.cloth_icon9,
+.cloth_icon10,
+.cloth_icon11,
+.cloth_icon12,
+.cloth_icon13,
+.cloth_icon14,
+.cloth_icon15 {
+    width: 24px;
+    height: 24px;
+    float: left;
+}
+
+.cloth_icon {
+    background-image: url(../weather-background/衣服.png);
+}
+
+.cloth_icon1 {
+    background-image: url(../weather-background/太阳.png);
+}
+
+.cloth_icon2 {
+    background-image: url(../weather-background/感冒药物.png);
+}
+
+.cloth_icon3 {
+    background-image: url(../weather-background/汽车.png);
+}
+
+.cloth_icon4 {
+    background-image: url(../weather-background/运动.png);
+}
+
+.cloth_icon5 {
+    background-image: url(../weather-background/雨伞.png);
+}
+
+.cloth_icon6 {
+    background-image: url(../weather-background/鱼.png);
+}
+
+.cloth_icon7 {
+    background-image: url(../weather-background/旅游.png);
+}
+
+.cloth_icon8 {
+    background-image: url(../weather-background/交通灯.png);
+}
+
+.cloth_icon9 {
+    background-image: url(../weather-background/动态条件.png);
+}
+
+.cloth_icon10 {
+    background-image: url(../weather-background/笑脸.png);
+}
+
+.cloth_icon11 {
+    background-image: url(../weather-background/衣架.png);
+}
+
+.cloth_icon12 {
+    background-image: url(../weather-background/化妆刷.png);
+}
+
+.cloth_icon13 {
+    background-image: url(../weather-background/空调.png);
+}
+
+.cloth_icon14 {
+    background-image: url(../weather-background/鼻子.png);
+}
+
+.cloth_icon15 {
+    background-image: url(../weather-background/太阳镜.png);
+}
+
+.box,
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7 {
+    float: left;
+    background-color: #fff;
+    left: 0px;
+    top: -188px;
+    position: relative;
+    border-right: 1px solid #e6e6e6;
+    height: 94px;
+    width: 93.25px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.cloth_icon,
+.cloth_icon1,
+.cloth_icon2,
+.cloth_icon3,
+.cloth_icon4,
+.cloth_icon5,
+.cloth_icon6,
+.cloth_icon7,
+.cloth_icon8,
+.cloth_icon9,
+.cloth_icon10,
+.cloth_icon11,
+.cloth_icon12,
+.cloth_icon13,
+.cloth_icon14,
+.cloth_icon15 {
+    float: left;
+    position: absolute;
+    left: 35px;
+    margin: 15px auto 10px;
+    background-size: 24px;
+}
+
+.bottom {
+    float: left;
+    position: absolute;
+    left: 35px;
+    top: 70px;
+    color: #999999;
+}
+
+.middle {
+    float: left;
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    color: #434343;
+}

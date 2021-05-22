@@ -1,0 +1,50 @@
+.item_left,
+.item_right {
+    float: left;
+    width: 50%;
+    height: 52px;
+    font-size: 14px;
+    color: #434343;
+    line-height: 14px;
+    padding: 0 20px;
+}
+
+.item_left .top_left,
+.item_right .top_right {
+    height: 12px;
+    margin-bottom: 13px;
+}
+
+.item_left .bottom_left,
+.item_right .bottom_right {
+    height: 22px;
+}
+
+.info {
+    background: #fff;
+    height: 103px;
+    padding-top: 26px;
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.top_left .date,
+.top_right .date {
+    float: left;
+}
+
+.top_left .temperatures,
+.top_right .temperatures {
+    float: right;
+}
+
+.bottom_left .weather,
+.bottom_right .weather {
+    float: left;
+}
+
+.bottom_left iframe,
+.bottom_right iframe {
+    float: right;
+}

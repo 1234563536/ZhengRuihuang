@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        /*添加媒体查询，设置不同屏幕宽度区间下的body的背景色样式*/
+
+        /*宽度小于768  max-width: 768px:说明当前屏幕的最大值为768px,也就意味着条件就是屏幕的宽度需要小于768px*/
+        @media screen and (max-width: 768px){
+            body{
+                background-color: green;
+            }
+        }
+
+        /*w:768~992:*/
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            body{
+                background-color: blue;
+            }
+        }
+
+        /*992~1200*/
+        @media screen and (min-width: 992px) and (max-width: 1200px){
+            body{
+                background-color: pink;
+            }
+        }
+
+        /*w>1200*/
+        @media screen and (min-width: 1200px){
+            body{
+                background-color: purple;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--媒体查询是来设置不同屏幕宽度下的  样式-->
+<!--需求：
+默认情况下，body的背景色：red
+w<768  green
+w:768~992  blue
+w:992~1200 pink
+w>1200:purple-->
+</body>
+</html>

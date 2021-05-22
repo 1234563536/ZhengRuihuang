@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>click延时</title>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			background-color: #F7F7F7;
+		}
+		
+		.result {
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			margin: 100px auto 0;
+			border: 1px solid #CCC;
+		}
+	</style>
+</head>
+<body>
+	<div class="result">
+		点我试试
+	</div>
+	<script>
+		var startTime;
+
+		// 打印信息函数
+		var log = function (msg) {
+			// 创建DOM结点，显示信息
+			var div = document.createElement('div');
+
+			// 计算触发时间
+			/*new Date().getTime():获取当前时间*/
+			div.innerHTML = (new Date().getTime()) + ': ' + (new Date().getTime() - startTime) + ': ' + msg;
+
+			// 添加到页面中
+			document.body.appendChild(div);
+		};
+
+		// 触屏开始
+		/*因为这个事件是最先触发的*/
+		var touchStart = function () {
+			startTime = new Date().getTime();
+
+			log('touchStart');
+		};
+
+		// 触屏结束
+		var touchEnd = function () {
+			log('touchEnd');
+		};
+
+		// 鼠标按下
+		var mouseDown = function () {
+			log('mouseDown');
+		};
+
+		// 鼠标点击
+		var mouseClick = function () {
+			log('mouseClick');
+		};
+
+		// 鼠标抬起
+		var mouseUp = function () {
+			log('mouseUp');
+		};
+
+		// 添加事件元素
+		var result = document.querySelector('.result');
+
+		// 分别绑订事件
+		result.addEventListener('mousedown', mouseDown);
+		result.addEventListener('click', mouseClick);
+		result.addEventListener('mouseup', mouseUp);
+		result.addEventListener('touchstart', touchStart);
+		result.addEventListener('touchend', touchEnd);
+		
+	</script>
+</body>
+</html>

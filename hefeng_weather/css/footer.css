@@ -1,0 +1,42 @@
+.footer {
+    font-size: 12px;
+    padding: 35px 0;
+    text-align: center;
+    color: #b2b2b2;
+}
+
+.footer .ct-links {
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+}
+
+.footer .copyright {
+    clear: both;
+    height: 26px;
+    line-height: 26px;
+}
+
+.footer .ct-links a {
+    text-decoration: none;
+    color: #b2b2b2;
+}
+
+
+/* .sec-living::-webkit-scrollbar {
+    display: none!important;
+    width: 0px;
+    height: 0px;
+} */
+
+.week::-webkit-scrollbar {
+    display: none!important;
+    width: 0px;
+    height: 0px;
+}
+
+.day::-webkit-scrollbar {
+    display: none!important;
+    width: 0px;
+    height: 0px;
+}
