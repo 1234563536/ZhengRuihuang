@@ -1,0 +1,37 @@
+{
+  "id": "2989274",
+  "name": "舆情分析",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10789815",
+      "name": "导出表单-导出结果_操作_jurassic",
+      "font_class": "jurassic_export-form",
+      "unicode": "e6c9",
+      "unicode_decimal": 59081
+    },
+    {
+      "icon_id": "5014",
+      "name": "充值",
+      "font_class": "chongzhi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "68264",
+      "name": "搜索，猫客",
+      "font_class": "sousuo",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "6216453",
+      "name": "所属单位",
+      "font_class": "suoshudanwei",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    }
+  ]
+}

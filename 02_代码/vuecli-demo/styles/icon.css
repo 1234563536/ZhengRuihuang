@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "tmall"; /* Project id 2778186 */
+    src: url('//at.alicdn.com/t/font_2778186_0mz9wo3afbtj.woff2?t=1630322788465') format('woff2'),
+    url('//at.alicdn.com/t/font_2778186_0mz9wo3afbtj.woff?t=1630322788465') format('woff'),
+    url('//at.alicdn.com/t/font_2778186_0mz9wo3afbtj.ttf?t=1630322788465') format('truetype');
+}
+
+.tmall {
+    font-family: "tmall" !important;
+    font-size: 12px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tmall-chongzhi:before {
+    content: "\e600";
+}
+
+.tmall-gouwuche:before {
+    content: "\e601";
+}
+
+.tmall-huiliuqujiage:before {
+    content: "\e602";
+}
+
+.tmall-huiliuquhuodong:before {
+    content: "\e603";
+}
+
+.tmall-huiliuquriyongbaihuo:before {
+    content: "\e604";
+}
+
+.tmall-huiliuqujinkoushipin:before {
+    content: "\e605";
+}
+
+.tmall-huiliuqushipin:before {
+    content: "\e606";
+}
+
+.tmall-jiatingqingji:before {
+    content: "\e607";
+}
+
+.tmall-liangyoufushi:before {
+    content: "\e608";
+}
+
+.tmall-meirongxihu:before {
+    content: "\e609";
+}
+
+.tmall-shipinyinliao:before {
+    content: "\e60a";
+}
+
+.tmall-serviceman88baoyou:before {
+    content: "\e60b";
+}
+
+.tmall-serviceyizhanshigouqi:before {
+    content: "\e60c";
+}
+
+.tmall-daohang:before {
+    content: "\e61f";
+}
+
+.tmall-jiantou:before {
+    content: "\e630";
+}
+
+.tmall-arrow-down:before {
+    content: "\e60d";
+}
+
+.tmall-jiantouarrow486:before {
+    content: "\e6aa";
+}
+
+.tmall-mima:before {
+    content: "\e61a";
+}
+
+.tmall-yonghu:before {
+    content: "\e634";
+}
+
+.tmall-jiantoushang:before {
+    content: "\e62d";
+}
+
+.tmall-jiandao:before {
+    content: "\e631";
+}
+
+.tmall-shouji:before {
+    content: "\e60e";
+}
+
+.tmall-muyingyongpin:before {
+    content: "\e60f";
+}
+
+.tmall-wangzhandaohang:before {
+    content: "\e626";
+}
+
+.tmall-shouji1:before {
+    content: "\e612";
+}
+
+.tmall-tianchongxing-:before {
+    content: "\e641";
+}
+
+.tmall-baseline-home-px:before {
+    content: "\e619";
+}
+
+.tmall-cha:before {
+    content: "\e610";
+}
+
+.tmall-General-2-63:before {
+    content: "\e7ce";
+}
